@@ -15,5 +15,10 @@
     "Rented": "Đã thuê",
     "Available": "Khả dụng",
     "All rights reserved": "Đã được đăng ký bản quyền",
-    "Rent": "Thuê"
+    "Rent": "Thuê",
+    "Room number": "Phòng số",
+    "Floor": "Lầu",
+    "Price": "Giá",
+    "Rented at": "Thuê lúc",
+    "Description": "Mô tả"
 }

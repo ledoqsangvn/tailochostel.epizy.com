@@ -9,9 +9,9 @@
     <thead class="table-dark">
         <tr>
             <th scope="col">No.</th>
-            <th scope="col">Room floor</th>
-            <th scope="col">Room number</th>
-            <th scope="col">Price</th>
+            <th scope="col">{!! __('Floor') !!}</th>
+            <th scope="col">{!! __('Room number') !!}</th>
+            <th scope="col">{!! __('Price') !!}</th>
             <th scope="col">Room image</th>
             <th scope="col">State</th>
             <th scope="col">Addition note</th>

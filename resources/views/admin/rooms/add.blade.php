@@ -6,9 +6,9 @@
 <form method="POST" action="/rooms/modify/add" enctype="multipart/form-data">
     @csrf
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" placeholder="Room number" name="roomNo"
-            pattern="[0-9]+" required>
-        <label for="floatingInput">Room number</label>
+        <input type="text" class="form-control" id="floatingInput" placeholder="{!! __('Room number') !!}"
+            name="roomNo" pattern="[0-9]+" required>
+        <label for="floatingInput">{!! __('Room number') !!}</label>
     </div>
     <div class="mb-3">
         <label for="formFile" class="form-label">Room image</label>
@@ -16,17 +16,17 @@
             required>
     </div>
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" placeholder="Room floor" name="roomFloor"
-            pattern="[0-9]+" required>
-        <label for="floatingInput">Room floor</label>
+        <input type="text" class="form-control" id="floatingInput" placeholder="{!! __('Floor') !!}"
+            name="roomFloor" pattern="[0-9]+" required>
+        <label for="floatingInput">{!! __('Floor') !!}</label>
     </div>
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" placeholder="Room price" name="roomPrice"
-            pattern="[0-9]+" required>
-        <label for="floatingInput">Room price</label>
+        <input type="text" class="form-control" id="floatingInput" placeholder="{!! __('Price') !!}"
+            name="roomPrice" pattern="[0-9]+" required>
+        <label for="floatingInput">{!! __('Price') !!}</label>
     </div>
     <div class="mb-3">
-        <label for="roomDescriptionFormControlTextarea1" class="form-label">Room description</label>
+        <label for="roomDescriptionFormControlTextarea1" class="form-label">{!! __('Description') !!}</label>
         <textarea class="form-control ckeditor" id="roomDescriptionFormControlTextarea1" rows="3" name="roomDescription"></textarea>
     </div>
     <button type="submit" class="btn btn-success d-block mx-auto">Add</button>

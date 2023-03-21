@@ -186,29 +186,35 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 @if (app()->getLocale() == 'vi')
-                                    <span class="fw-bold">VN</span>
+                                    <img src="/assets/img/vn.svg" style="width: auto;height:1.25rem;">
                                 @else
-                                    <span class="fw-bold">EN</span>
+                                    <img src="/assets/img/us.svg" style="width: auto;height:1.25rem;">
                                 @endif
                             </a>
                             <ul class="dropdown-menu dropdown-menu-lg-end">
                                 <li><a class="dropdown-item" href="/lang/vi">
                                         @if (app()->getLocale() == 'vi')
-                                            <span class="fw-bold">VN<i
+                                            <span class="fw-bold d-flex align-items-center"><img class="me-2"
+                                                    src="/assets/img/vn.svg" style="width: auto;height:1.25rem;">VN<i
                                                     class="fa-solid fa-check ms-2 text-success"></i></span>
                                         @else
-                                            <span>VN</span>
+                                            <span class="d-flex align-items-center"><img class="me-2"
+                                                    src="/assets/img/vn.svg"
+                                                    style="width: auto;height:1.25rem;">VN</span>
                                         @endif
                                     </a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li><a class="dropdown-item" href="/lang/en">
-                                        @if (app()->getLocale() == 'en')
-                                            <span class="fw-bold">EN<i
+                                        @if (app()->getLocale() == 'us')
+                                            <span class="fw-bold d-flex align-items-center"><img class="me-2"
+                                                    src="/assets/img/us.svg" style="width: auto;height:1.25rem;">EN<i
                                                     class="fa-solid fa-check ms-2 text-success"></i></span>
                                         @else
-                                            <span>EN</span>
+                                            <span class="d-flex align-items-center"><img class="me-2"
+                                                    src="/assets/img/us.svg"
+                                                    style="width: auto;height:1.25rem;">EN</span>
                                         @endif
                                     </a></li>
                             </ul>

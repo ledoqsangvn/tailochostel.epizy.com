@@ -20,13 +20,13 @@
                         </a>
                         <div class="card-body">
                             <a href="/rooms/view/{{ $result->id }}">
-                                <h5 class="card-title">Room number: <b>{{ $result->roomNo }}</b></h5>
+                                <h5 class="card-title">{!! __('Room number') !!}: <b>{{ $result->roomNo }}</b></h5>
                             </a>
-                            <div class="card-text">Floor: <b>{{ $result->roomFloor }}</b></div>
-                            <div class="card-text">Price: <b><?php echo number_format("$result->roomPrice", 0); ?></b> VND</div>
+                            <div class="card-text">{!! __('Floor') !!}: <b>{{ $result->roomFloor }}</b></div>
+                            <div class="card-text">{!! __('Price') !!}: <b><?php echo number_format("$result->roomPrice", 0); ?></b> VND</div>
                             <div class="card-text mb-3">
                                 @if ($result->state == 'rented')
-                                    Rented at:
+                                    {!! __('Rented at') !!}:
                                     <b>{{ $result->updated_at }}</b>
                                 @endif
                             </div>

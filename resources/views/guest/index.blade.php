@@ -38,10 +38,10 @@
                 </a>
                 <div class="card-body">
                     <a href="/rooms/view/{{ $room->id }}">
-                        <h5 class="card-title">Room number: <b>{{ $room->roomNo }}</b></h5>
+                        <h5 class="card-title">{!! __('Room number') !!}: <b>{{ $room->roomNo }}</b></h5>
                     </a>
-                    <div class="card-text">Floor: <b>{{ $room->roomFloor }}</b></div>
-                    <div class="card-text mb-3">Price: <b><?php echo number_format("$room->roomPrice", 0); ?></b> VND</div>
+                    <div class="card-text">{!! __('Floor') !!}: <b>{{ $room->roomFloor }}</b></div>
+                    <div class="card-text mb-3">{!! __('Price') !!}: <b><?php echo number_format("$room->roomPrice", 0); ?></b> VND</div>
                     <div class="d-flex justify-content-center">
                         <div class="btn-group" role="group" aria-label="Modify button">
                             <form method="POST" action="/rooms/modify/rent/{{ $room->id }}">

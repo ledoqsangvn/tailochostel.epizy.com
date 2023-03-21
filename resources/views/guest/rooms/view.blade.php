@@ -13,22 +13,23 @@
             alt="Room image" title="Click to view image">
     </div>
     <div class="col text-center text-lg-start">
-        <h5>Room number: <b>{{ $room->roomNo }}</b></h5>
-        <div>Room floor: <b>{{ $room->roomFloor }}</b></div>
-        <div class="mb-3">Price: <b><?php echo number_format("$room->roomPrice", 0); ?></b> VND</div>
-        <div class="h5 fw-bold">Description:</div>
+        <h5>{!! __('Room number') !!}: <b>{{ $room->roomNo }}</b></h5>
+        <div>{!! __('Floor') !!}: <b>{{ $room->roomFloor }}</b></div>
+        <div class="mb-3">{!! __('Price') !!}: <b><?php echo number_format("$room->roomPrice", 0); ?></b> VND</div>
+        <div class="h5 fw-bold">{!! __('Description') !!}:</div>
         <div class="mb-3">{!! $room->roomDescription !!}</div>
         @if ($room->state == 'available')
             <form method="POST" action="/rooms/modify/rent/{{ $room->id }}">
                 @csrf
                 <input name="_method" type="hidden" value="GET">
-                <a type="submit" class="btn btn-success show_confirm" data-toggle="tooltip" title='{!!__("Rent")!!}'>{!!__("Rent")!!}</a>
+                <a type="submit" class="btn btn-success show_confirm" data-toggle="tooltip"
+                    title='{!! __('Rent') !!}'>{!! __('Rent') !!}</a>
             </form>
         @elseif ($room->state == 'rented')
             <button class="btn btn-danger disabled">{!! __('Rented') !!}</button>
             <div class="mt-3">
                 @if ($room->state == 'rented')
-                    Rented at:
+                    {!! __('Rented at') !!}:
                     <b>{{ $room->updated_at }}</b>
                 @endif
             </div>
