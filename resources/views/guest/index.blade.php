@@ -20,11 +20,11 @@
 @endauth
 <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2">
     <div class="col">
-        <h3 class="mb-3 fw-bold">Available room ({{ $countAvailable }})</span>
+        <h3 class="mb-3 fw-bold">{!! __('Available rooms') !!} ({{ $countAvailable }})</span>
         </h3>
     </div>
     <div class="col">
-        <a type="button" class="btn btn-success mb-3" href="/rooms/available">View all available rooms <i
+        <a type="button" class="btn btn-success mb-3" href="/rooms/available">{!! __('View all available rooms') !!} <i
                 class="fa-solid fa-chevron-right"></i></a>
     </div>
 </div>
@@ -33,8 +33,8 @@
         <div class="col d-flex align-items-stretch">
             <div class="card shadow" id="roomCard">
                 <a href="/rooms/view/{{ $room->id }}" class="img-zoom">
-                    <img src="/assets/img/img.svg" data-src="/assets/img/rooms/{{ $room->roomImg }}" class="card-img-top lazy" width="auto" height="256px"
-                        alt="Room image">
+                    <img src="/assets/img/img.svg" data-src="/assets/img/rooms/{{ $room->roomImg }}"
+                        class="card-img-top lazy" width="auto" height="256px" alt="Room image">
                 </a>
                 <div class="card-body">
                     <a href="/rooms/view/{{ $room->id }}">
@@ -48,7 +48,7 @@
                                 @csrf
                                 <input name="_method" type="hidden" value="GET">
                                 <a type="submit" class="btn btn-success show_confirm" data-toggle="tooltip"
-                                    title='Rent'>Rent</a>
+                                    title='{!!__("Rent")!!}'>{!!__("Rent")!!}</a>
                             </form>
                         </div>
                     </div>

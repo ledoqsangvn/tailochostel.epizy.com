@@ -22,10 +22,10 @@
             <form method="POST" action="/rooms/modify/rent/{{ $room->id }}">
                 @csrf
                 <input name="_method" type="hidden" value="GET">
-                <a type="submit" class="btn btn-success show_confirm" data-toggle="tooltip" title='Rent'>Rent</a>
+                <a type="submit" class="btn btn-success show_confirm" data-toggle="tooltip" title='{!!__("Rent")!!}'>{!!__("Rent")!!}</a>
             </form>
         @elseif ($room->state == 'rented')
-            <button class="btn btn-danger disabled">Rented</button>
+            <button class="btn btn-danger disabled">{!! __('Rented') !!}</button>
             <div class="mt-3">
                 @if ($room->state == 'rented')
                     Rented at:
@@ -59,7 +59,7 @@
 </script>
 <script>
     lightGallery(document.getElementById('lightGallery'), {
-        plugins: [lgZoom, lgRotate],
+        plugins: [lgZoom, lgRotate, lgFullscreen],
         selector: '#img-gallery',
         hideScrollbar: true,
     });

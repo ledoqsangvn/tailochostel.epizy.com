@@ -5,9 +5,10 @@
 <div class="container">
     <div class="d-flex justify-content-center">
         <div class="btn-group mb-3" role="group" aria-label="Room state" id="roomState">
-            <a type="button" class="btn btn-warning" href="/rooms/all">All rooms ({{ $countAll }})</a>
-            <a type="button" class="btn btn-danger" href="/rooms/rented">Rented rooms ({{ $countRented }})</a>
-            <a type="button" class="btn btn-success" href="/rooms/available">Available rooms
+            <a type="button" class="btn btn-warning" href="/rooms/all">{!! __('All rooms') !!} ({{ $countAll }})</a>
+            <a type="button" class="btn btn-danger" href="/rooms/rented">{!! __('Rented rooms') !!}
+                ({{ $countRented }})</a>
+            <a type="button" class="btn btn-success" href="/rooms/available">{!! __('Available rooms') !!}
                 ({{ $countAvailable }})</a>
         </div>
     </div>
@@ -41,10 +42,10 @@
                                     @csrf
                                     <input name="_method" type="hidden" value="GET">
                                     <a type="submit" class="btn btn-success show_confirm" data-toggle="tooltip"
-                                        title='Rent'>Rent</a>
+                                        title='{!! __('Rent') !!}'>{!! __('Rent') !!}</a>
                                 </form>
                             @elseif ($room->state == 'rented')
-                                <button class="btn btn-danger disabled">Rented</button>
+                                <button class="btn btn-danger disabled">{!! __('Rented') !!}</button>
                             @endif
                         </div>
                     </div>

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\Models\Room;
 use App\Models\User;
 use Auth;
 use DB;
 use File;
 use Illuminate\Http\Request;
+use Route;
 
 class MainController extends Controller
 {
@@ -27,15 +29,15 @@ class MainController extends Controller
             $count = DB::table('rooms')->where('state', $room_state)->count();
             $count = DB::table('rooms')->where('state', $room_state)->count();
             $count = DB::table('rooms')->count();
-            $heading = "All rooms";
+            $heading = __("All rooms");
         } elseif ($room_state == "rented") {
             $rooms = DB::table('rooms')->where('state', $room_state)->paginate(8);
             $count = DB::table('rooms')->where('state', $room_state)->count();
-            $heading = "Rented rooms";
+            $heading = __("Rented rooms");
         } elseif ($room_state == "available") {
             $rooms = DB::table('rooms')->where('state', $room_state)->paginate(8);
             $count = DB::table('rooms')->where('state', $room_state)->count();
-            $heading = "Available rooms";
+            $heading = __("Available rooms");
         }
         return view('guest.rooms.index', compact('rooms', 'heading', 'count', 'countAll', 'countAvailable', 'countRented'));
     }
@@ -69,5 +71,11 @@ class MainController extends Controller
         }
         $room->update();
         return redirect('/rooms/all');
+    }
+    public function changeLanguage($language)
+    {
+        \Session::put('locale', $language);
+
+        return redirect()->back();
     }
 }

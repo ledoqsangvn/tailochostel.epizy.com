@@ -32,14 +32,14 @@
 <div class="row row-cols-1 row-cols-lg-2 g-3">
     <div class="col">
         <div class="text-center shadow rounded-3 p-3">
-            <h5 class="fw-bold">Rented / Available (rooms)</h5>
+            <h5 class="fw-bold">{!! __('Rented') !!} / {!! __('Available') !!} (rooms)</h5>
             <canvas id="pieChart" class="mb-3 w-25 h-25 mx-auto"></canvas>
             <div>Total rooms: <b>{{ $countAll }}</b> rooms</div>
-            <div><b style="color: #fc6484;">Rented rooms</b>: {!! number_format((float) $percentRented, 0) !!}%
+            <div><b style="color: #fc6484;">{!! __('Rented rooms') !!}</b>: {!! number_format((float) $percentRented, 0) !!}%
                 (<b>{{ $countRented }}</b>
                 rooms)
             </div>
-            <div><b style="color:#34a4ec;">Available rooms</b>: {!! number_format((float) $percentAvailable, 0) !!}%
+            <div><b style="color:#34a4ec;">{!! __('Available rooms') !!}</b>: {!! number_format((float) $percentAvailable, 0) !!}%
                 (<b>{{ $countAvailable }}</b>
                 rooms)</div>
         </div>

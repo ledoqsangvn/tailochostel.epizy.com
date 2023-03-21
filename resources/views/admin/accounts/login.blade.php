@@ -4,7 +4,7 @@
     <form method="POST" action="/login">
         @csrf
         <img class="d-block mx-auto mb-3" src="/assets/img/logo.svg" alt="Logo" width="56px" height="auto">
-        <h3 class="fw-bold text-center mb-2">Login</h3>
+        <h3 class="fw-bold text-center mb-2">{!! __('Log in') !!}</h3>
         @if (count($errors) > 0)
             <div class="d-flex justify-content-center">
                 <div class="alert alert-danger">
@@ -22,8 +22,8 @@
             <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
             <label for="floatingPassword">Password</label>
         </div>
-        <button class="d-block mx-auto btn btn-success" type="submit">Log in</button>
-        <div class="text-center mt-3">&copy; 2023 <b>Tai Loc Hostel</b>. All rights reserved.</div>
+        <button class="d-block mx-auto btn btn-success" type="submit">{!! __('Log in') !!}</button>
+        <div class="text-center mt-3">&copy; 2023 <b>{!! __('Tai Loc Hostel') !!}</b>. All rights reserved.</div>
     </form>
     @if (session('notify') == 'Login failed')
         <script>

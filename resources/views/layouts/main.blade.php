@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>Tai Loc Hostel - @yield('title')</title>
+    <title>{!! __('Tai Loc Hostel') !!} - @yield('title')</title>
     <meta name="google-site-verification" content="nrtrLLsjtHZg3XZFvFwtaGa_e4KMAukWJ9N4wgaEKAc" />
     <meta name="theme-color" content="#062639">
     <meta name="author" content="Le Do Quang Sang">
@@ -131,14 +131,11 @@
         media="screen and (device-width: 744px) and (device-height: 1133px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
         href="/assets/img/ios_splash/8.3__iPad_Mini_portrait.png">
     <link rel="icon" href="/assets/img/favicon.ico?d=18032023" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"
-        integrity="sha256-5nZ/2843WU4Jpw4eqVWKHsjY0aG4VGag+fzxfKCPq0k=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"
-        integrity="sha256-VfASL/Wqq0hhl9HOIkU9lsi3JYJ8wHlMD/EHp+S2rys=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/rotate/lg-rotate.min.js"
-        integrity="sha256-DiF+g1qKxf0Rksrgh0ZOVJUkyWv6vLn38h75HC7ELfU=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css"
-        integrity="sha256-Eg8Gfr1vMiM54szM1+h+M018fqWyvVU/Ml8q48Oub+g=" crossorigin="anonymous">
+    <script src="/assets/js/lightgallery.min.js"></script>
+    <script src="/assets/js/lg-zoom.min.js"></script>
+    <script src="/assets/js/lg-rotate.min.js"></script>
+    <script src="/assets/js/lg-fullscreen.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/lightgallery-bundle.min.css">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -147,8 +144,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand me-0 me-lg-3 fw-bold" href="/"><span
                         class="d-flex align-items-center"><img class="me-2" src="/assets/img/logo.svg"
-                            width="40px" height="auto">Tai Loc
-                        Hostel</span></a>
+                            width="40px" height="auto">{!! __('Tai Loc Hostel') !!}</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -157,10 +153,12 @@
                 <div class="collapse navbar-collapse" id="navbarToggler">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="/"><i class="fa-solid fa-house me-2"></i>Home</a>
+                            <a class="nav-link" href="/"><i
+                                    class="fa-solid fa-house me-2"></i>{!! __('Home') !!}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/rooms/all"><i class="fa-solid fa-door-open me-2"></i>Rooms</a>
+                            <a class="nav-link" href="/rooms/all"><i
+                                    class="fa-solid fa-door-open me-2"></i>{!! __('Rooms') !!}</a>
                         </li>
                         @auth
                             <li class="nav-item">
@@ -176,18 +174,49 @@
                     @guest
                         <form class="d-none d-lg-flex rounded-2 w-50" role="search" action="/search">
                             <div class="input-group">
-                                <input class="form-control" type="search" placeholder="Search" aria-label="Search"
-                                    name="keyword">
+                                <input class="form-control" type="search" placeholder="{!! __('Search') !!}"
+                                    aria-label="{!! __('Search') !!}" name="keyword">
                                 <button class="btn btn-success" type="submit"><i
                                         class="fa-solid fa-magnifying-glass"></i></button>
                             </div>
                         </form>
                     @endguest
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                @if (app()->getLocale() == 'vi')
+                                    <span class="fw-bold">VN</span>
+                                @else
+                                    <span class="fw-bold">EN</span>
+                                @endif
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-lg-end">
+                                <li><a class="dropdown-item" href="/lang/vi">
+                                        @if (app()->getLocale() == 'vi')
+                                            <span class="fw-bold">VN<i
+                                                    class="fa-solid fa-check ms-2 text-success"></i></span>
+                                        @else
+                                            <span>VN</span>
+                                        @endif
+                                    </a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="/lang/en">
+                                        @if (app()->getLocale() == 'en')
+                                            <span class="fw-bold">EN<i
+                                                    class="fa-solid fa-check ms-2 text-success"></i></span>
+                                        @else
+                                            <span>EN</span>
+                                        @endif
+                                    </a></li>
+                            </ul>
+                        </li>
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="/login"><i
-                                        class="fa-solid fa-right-to-bracket me-2"></i>Login</a>
+                                        class="fa-solid fa-right-to-bracket me-2"></i>{!! __('Log in') !!}</a>
                             </li>
                         @endguest
                         @auth
@@ -200,13 +229,14 @@
                                             alt="Avatar">{{ Auth::user()->fullname }}</span></a>
                                 <ul class="dropdown-menu dropdown-menu-lg-end">
                                     <li><a class="dropdown-item" href="/user/view/{{ Auth::user()->id }}"><i
-                                                class="fa-solid fa-user me-2"></i>View profile</a>
+                                                class="fa-solid fa-user me-2"></i>{!! __('View profile') !!}</a>
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li><a class="dropdown-item" href="/logout"><i
-                                                class="fa-solid fa-right-from-bracket me-2"></i>Log out</a></li>
+                                                class="fa-solid fa-right-from-bracket me-2"></i>{!! __('Log out') !!}</a>
+                                    </li>
                                 </ul>
                             </li>
                         @endauth
@@ -220,8 +250,8 @@
             @guest
                 <form class="d-flex d-lg-none mb-3" role="search" action="/search">
                     <div class="input-group border border-dark rounded-2">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search"
-                            name="keyword">
+                        <input class="form-control" type="search" placeholder="{!! __('Search') !!}"
+                            aria-label="{!! __('Search') !!}" name="keyword">
                         <button class="btn btn-success" type="submit"><i
                                 class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
@@ -266,15 +296,15 @@
                     @endauth
                     <div class="col text-center text-lg-start">
                         <img class="mb-2" src="/assets/img/logo.svg" width="40px" height="auto">
-                        <h5 class="fw-bold mb-2" style="color:rgba(248, 177, 21, 1);">Tai Loc Hostel</h5>
-                        <p class="mb-0"><b>Tai Loc Hostel</b> is a hostel for students with good price.</p>
+                        <h5 class="fw-bold mb-2" style="color:rgba(248, 177, 21, 1);">{!! __('Tai Loc Hostel') !!}</h5>
+                        <p class="mb-0"><b>{!! __('Tai Loc Hostel') !!}</b> {!! __('is a hostel for <b>students</b> with <b>good price</b>') !!}.</p>
                     </div>
                     <div class="col text-center text-lg-start">
-                        <h5 class="fw-bold" style="color:rgba(248, 177, 21, 1);">Rooms:</h5>
+                        <h5 class="fw-bold" style="color:rgba(248, 177, 21, 1);">{!! __('Rooms') !!}:</h5>
                         @guest
-                            <div class="mb-2"><a href="/rooms/all">All rooms</a></div>
-                            <div class="mb-2"><a href="/rooms/available">All available rooms</a></div>
-                            <div><a href="/rooms/rented">All rented rooms</a></div>
+                            <div class="mb-2"><a href="/rooms/all">{!! __('All rooms') !!}</a></div>
+                            <div class="mb-2"><a href="/rooms/available">{!! __('Available rooms') !!}</a></div>
+                            <div><a href="/rooms/rented">{!! __('Rented rooms') !!}</a></div>
                         @endguest
                         @auth
                             <div class="mb-2"><a href="/admin/manage/rooms">Manage rooms</a></div>
@@ -284,12 +314,13 @@
                     @auth
                         <div class="col text-center text-lg-start">
                             <h5 class="fw-bold" style="color:rgba(248, 177, 21, 1);">Account:</h5>
-                            <div class="mb-2"><a href="/user/view/{{ Auth::user()->id }}">View profile</a></div>
-                            <div><a href="/logout">Log out</a></div>
+                            <div class="mb-2"><a href="/user/view/{{ Auth::user()->id }}">{!! __('View profile') !!}</a>
+                            </div>
+                            <div><a href="/logout">{!! __('Log out') !!}</a></div>
                         </div>
                     @endauth
                     <div class="col text-center text-lg-start">
-                        <h5 class="fw-bold" style="color:rgba(248, 177, 21, 1);">Maps:</h5>
+                        <h5 class="fw-bold" style="color:rgba(248, 177, 21, 1);">{!! __('Maps') !!}:</h5>
                         <a href="https://www.google.com/maps/place/10%C2%B023'47.2%22N+105%C2%B025'15.8%22E/@10.3963101,105.4211017,19.96z/data=!4m4!3m3!8m2!3d10.39643!4d105.421065"
                             type="button" target="_blank"><img class="lazy img-fluid rounded-3"
                                 src="/assets/img/img.svg" data-src="/assets/img/map.jpg" style="width:600px;"
@@ -298,7 +329,9 @@
                 </div>
             </div>
             <div class="container">
-                <div class="text-center"><span>&copy; 2023 <b>Tai Loc Hostel</b>. All rights reserved.</span></div>
+                <div class="text-center"><span>&copy; 2023 <b>{!! __('Tai Loc Hostel') !!}</b>.
+                        {!! __('All rights reserved') !!}.</span>
+                </div>
             </div>
     </footer>
     <script src="/assets/js/bootstrap.bundle.min.js"></script>

@@ -22,11 +22,11 @@
     <p class="mb-2">Room status</p>
     <select class="form-select mb-3" aria-label="Room state" name="state">
         @if ($room->state == 'rented')
-            <option value="rented" selected>Rented</option>
-            <option value="available">Available</option>
+            <option value="rented" selected>{!!__("Rented")!!}</option>
+            <option value="available">{!!__("Available")!!}</option>
         @elseif($room->state == 'available')
-            <option value="available" selected>Available</option>
-            <option value="rented">Rented</option>
+            <option value="available" selected>{!!__("Available")!!}</option>
+            <option value="rented">{!!__("Rented")!!}</option>
         @endif
     </select>
     <div class="form-floating mb-3">

@@ -25,7 +25,7 @@
 </div>
 <script>
     lightGallery(document.getElementById('lightGallery'), {
-        plugins: [lgZoom, lgRotate],
+        plugins: [lgZoom, lgRotate, lgFullscreen],
         selector: '#img-gallery',
         speed: 500,
         hideScrollbar: true,

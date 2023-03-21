@@ -37,10 +37,10 @@
                                             @csrf
                                             <input name="_method" type="hidden" value="GET">
                                             <a type="submit" class="btn btn-success show_confirm" data-toggle="tooltip"
-                                                title='Rent'>Rent</a>
+                                                title='{!!__("Rent")!!}'>{!!__("Rent")!!}</a>
                                         </form>
                                     @elseif ($result->state == 'rented')
-                                        <button class="btn btn-danger disabled">Rented</button>
+                                        <button class="btn btn-danger disabled">{!! __('Rented') !!}</button>
                                     @endif
                                 </div>
                             </div>

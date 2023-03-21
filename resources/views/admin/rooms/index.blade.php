@@ -28,14 +28,14 @@
                 <td>{{ $room->roomNo }}</td>
                 <td><?php echo number_format("$room->roomPrice", 0); ?> VND</td>
                 <td class="text-center">
-                    <img class="lazy" src="/assets/img/img.svg" data-src="/assets/img/rooms/{{ $room->roomImg }}" width="auto" height="128px"
-                        alt="Room {{ $room->roomNo }} image">
+                    <img class="lazy" src="/assets/img/img.svg" data-src="/assets/img/rooms/{{ $room->roomImg }}"
+                        width="auto" height="128px" alt="Room {{ $room->roomNo }} image">
                 </td>
                 <td>
                     @if ($room->state == 'rented')
-                        <span class="text-danger">Rented</span>
+                        <span class="text-danger">{!! __('Rented') !!}</span>
                     @else
-                        <span class="text-success">Available</span>
+                        <span class="text-success">{!! __('Available') !!}</span>
                     @endif
                 </td>
                 <td>
