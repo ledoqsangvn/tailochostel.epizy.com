@@ -41,8 +41,8 @@
                                 <form method="POST" action="/rooms/modify/rent/{{ $room->id }}">
                                     @csrf
                                     <input name="_method" type="hidden" value="GET">
-                                    <a type="submit" class="btn btn-success show_confirm" data-toggle="tooltip"
-                                        title='{!! __('Rent') !!}'>{!! __('Rent') !!}</a>
+                                    <a type="submit" class="btn btn-success show_confirm"
+                                        data-toggle="tooltip">{!! __('Rent') !!}</a>
                                 </form>
                             @elseif ($room->state == 'rented')
                                 <button class="btn btn-danger disabled">{!! __('Rented') !!}</button>

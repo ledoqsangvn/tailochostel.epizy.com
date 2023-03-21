@@ -183,7 +183,7 @@
                     @endguest
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown me-0 me-lg-2">
-                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 @if (app()->getLocale() == 'vi')
                                     <img src="/assets/img/vn.svg" style="width: auto;height:1.25rem;">
@@ -263,15 +263,20 @@
                     </div>
                 </form>
             @endguest
+            <div class="d-flex justify-content-center">
+                <div class="alert alert-danger">
+                    <div><i class="fa-solid fa-triangle-exclamation me-2"></i>{!! __('Translation is not complete') !!} !</div>
+                </div>
+            </div>
             <div class="dropup">
                 <button class="animated-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                         class="fa-solid fa-comment"></i></button>
                 <ul class="dropdown-menu dropdown-menu-lg-end" id="floatingBtnShow">
-                    <li><button class="dropdown-item p-2 d-flex align-items-center displayMess" data-toggle="tooltip"
-                            title='Messenger'><img class="me-2" src="/assets/img/messenger.svg" width="56px"
+                    <li><button class="dropdown-item p-2 d-flex align-items-center displayMess"
+                            data-toggle="tooltip"><img class="me-2" src="/assets/img/messenger.svg" width="56px"
                                 height="auto">Messenger</button></li>
-                    <li><button class="dropdown-item p-2 d-flex align-items-center displayMess" data-toggle="tooltip"
-                            title='Zalo'><img class="me-2" src="/assets/img/zalo.svg" width="56px"
+                    <li><button class="dropdown-item p-2 d-flex align-items-center displayMess"
+                            data-toggle="tooltip"><img class="me-2" src="/assets/img/zalo.svg" width="56px"
                                 height="auto">Zalo</button></li>
                 </ul>
             </div>

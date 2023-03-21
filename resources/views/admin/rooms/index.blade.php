@@ -55,10 +55,10 @@
                         @csrf
                         <input name="_method" type="hidden" value="GET">
                         @if ($room->state == 'available')
-                            <a type="button" class="btn btn-danger disabled" title='Delete'><i
+                            <a type="button" class="btn btn-danger disabled"><i
                                     class="fa-solid fa-trash me-2"></i>Delete</a>
                         @else
-                            <a type="submit" class="btn btn-danger show_delete" data-toggle="tooltip" title='Delete'><i
+                            <a type="submit" class="btn btn-danger show_delete" data-toggle="tooltip"><i
                                     class="fa-solid fa-trash me-2"></i>Delete</a>
                         @endif
                     </form>

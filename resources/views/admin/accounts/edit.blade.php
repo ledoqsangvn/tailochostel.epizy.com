@@ -13,8 +13,7 @@
         <label for="formFile" class="form-label">Avatar</label>
         <input class="form-control" type="file" id="formFile" name="avatar" accept=".png, .jpg, .jpeg, .webp">
     </div>
-    <button type="submit" class="btn btn-success d-block mx-auto edit_confirm" data-toggle="tooltip"
-        title='Save'>Save</button>
+    <button type="submit" class="btn btn-success d-block mx-auto edit_confirm" data-toggle="tooltip">Save</button>
 </form>
 <script script type="text/javascript">
     $('.edit_confirm').click(function(event) {

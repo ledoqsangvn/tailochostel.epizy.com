@@ -38,8 +38,8 @@
         <label for="roomDescriptionFormControlTextarea1" class="form-label">{!! __('Description') !!}</label>
         <textarea class="form-control ckeditor" id="roomDescriptionFormControlTextarea1" rows="3" name="roomDescription">{!! $room->roomDescription !!}</textarea>
     </div>
-    <button type="submit" class="btn btn-success d-block mx-auto edit_confirm" data-toggle="tooltip"
-        title='Save'>Save change</button>
+    <button type="submit" class="btn btn-success d-block mx-auto edit_confirm" data-toggle="tooltip">Save
+        change</button>
 </form>
 <script script type="text/javascript">
     $('.edit_confirm').click(function(event) {
