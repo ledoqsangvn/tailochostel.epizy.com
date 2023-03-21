@@ -207,7 +207,7 @@
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li><a class="dropdown-item" href="/lang/en">
-                                        @if (app()->getLocale() == 'us')
+                                        @if (app()->getLocale() == 'en')
                                             <span class="fw-bold d-flex align-items-center"><img class="me-2"
                                                     src="/assets/img/us.svg" style="width: auto;height:1.25rem;">EN<i
                                                     class="fa-solid fa-check ms-2 text-success"></i></span>
