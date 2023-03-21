@@ -130,7 +130,7 @@
     <link rel="apple-touch-startup-image"
         media="screen and (device-width: 744px) and (device-height: 1133px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
         href="/assets/img/ios_splash/8.3__iPad_Mini_portrait.png">
-    <link rel="icon" href="/assets/img/favicon.ico?d=18032023" type="image/x-icon">
+    <link rel="icon" href="/assets/img/favicon.ico?date=03212023" type="image/x-icon">
     <script src="/assets/js/lightgallery.min.js"></script>
     <script src="/assets/js/lg-zoom.min.js"></script>
     <script src="/assets/js/lg-rotate.min.js"></script>

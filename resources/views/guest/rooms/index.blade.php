@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-@section('title', 'Room')
+@section('title', $heading)
 <h3 class="mb-2 fw-bold">{{ $heading }} ({{ $count }})</h3>
 <div class="container">
     <div class="d-flex justify-content-center">

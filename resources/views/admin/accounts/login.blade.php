@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Login')
+@section('title', __('Log in'))
 @section('content')
     <form method="POST" action="/login">
         @csrf

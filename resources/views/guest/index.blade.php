@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-@section('title', 'Home')
+@section('title', __('Home'))
 @if (session('notify') == 'Logout success')
     <script>
         Swal.fire({
@@ -48,7 +48,7 @@
                                 @csrf
                                 <input name="_method" type="hidden" value="GET">
                                 <a type="submit" class="btn btn-success show_confirm" data-toggle="tooltip"
-                                    title='{!!__("Rent")!!}'>{!!__("Rent")!!}</a>
+                                    title='{!! __('Rent') !!}'>{!! __('Rent') !!}</a>
                             </form>
                         </div>
                     </div>

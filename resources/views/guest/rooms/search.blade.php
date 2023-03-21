@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-@section('title', 'Room')
+@section('title', __('Search'))
 @if (is_null($search))
     <div class="d-flex justify-content-center">
         <div class="d-inline-flex alert alert-danger text-center justify-content-center" role="alert">
@@ -37,7 +37,7 @@
                                             @csrf
                                             <input name="_method" type="hidden" value="GET">
                                             <a type="submit" class="btn btn-success show_confirm" data-toggle="tooltip"
-                                                title='{!!__("Rent")!!}'>{!!__("Rent")!!}</a>
+                                                title='{!! __('Rent') !!}'>{!! __('Rent') !!}</a>
                                         </form>
                                     @elseif ($result->state == 'rented')
                                         <button class="btn btn-danger disabled">{!! __('Rented') !!}</button>
