@@ -182,7 +182,7 @@
                         </form>
                     @endguest
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown me-0 me-lg-2">
                             <a class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 @if (app()->getLocale() == 'vi')
@@ -319,7 +319,7 @@
                     </div>
                     @auth
                         <div class="col text-center text-lg-start">
-                            <h5 class="fw-bold" style="color:rgba(248, 177, 21, 1);">Account:</h5>
+                            <h5 class="fw-bold" style="color:rgba(248, 177, 21, 1);">{!! __('Account') !!}:</h5>
                             <div class="mb-2"><a href="/user/view/{{ Auth::user()->id }}">{!! __('View profile') !!}</a>
                             </div>
                             <div><a href="/logout">{!! __('Log out') !!}</a></div>
