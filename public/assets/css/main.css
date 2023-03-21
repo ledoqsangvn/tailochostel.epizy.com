@@ -1,0 +1,239 @@
+* {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    font-family: Arial;
+}
+
+html,
+body {
+    color: rgb(33, 37, 41);
+    background-color: rgb(248, 249, 250);
+}
+
+main {
+    animation-name: fade;
+    animation-duration: 1.25s;
+    animation-delay: 0s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.navbar {
+    background-color: #04243c;
+    --bs-navbar-brand-color: rgb(248, 177, 21);
+    --bs-navbar-brand-hover-color: rgb(248, 177, 21);
+    --bs-navbar-color: rgba(248, 249, 250, 1);
+    --bs-navbar-hover-color: rgba(248, 177, 21, 1);
+    --bs-navbar-disabled-color: rgba(248, 249, 250, 0.5);
+    --bs-navbar-active-color: rgba(248, 177, 21, 1);
+    --bs-navbar-toggler-border-color: rgba(248, 177, 21, 0.75);
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28248, 177, 21, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+footer {
+    background-color: #04243c;
+}
+
+a {
+    text-decoration: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+main a {
+    color: rgb(33, 37, 41);
+}
+
+main a:hover {
+    color: #778f9f;
+}
+
+footer a {
+    color: rgb(248, 249, 250);
+}
+
+footer a:hover {
+    color: rgb(248, 177, 21);
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+}
+
+.img-zoom {
+    height: 256px;
+    overflow: hidden;
+}
+
+.img-zoom img {
+    transition: transform .5s ease;
+}
+
+.img-zoom:hover img {
+    transform: scale(1.2);
+}
+
+body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown),
+html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+    height: 100% !important;
+    overflow-y: visible !important;
+}
+
+.btn-success {
+    --bs-btn-color: rgb(248, 249, 250);
+    --bs-btn-hover-color: rgb(248, 249, 250);
+    --bs-btn-active-color: rgb(248, 249, 250);
+    --bs-btn-disabled-color: rgb(248, 249, 250);
+}
+
+.btn-danger {
+    --bs-btn-color: rgb(248, 249, 250);
+    --bs-btn-hover-color: rgb(248, 249, 250);
+    --bs-btn-active-color: rgb(248, 249, 250);
+    --bs-btn-disabled-color: rgb(248, 249, 250);
+}
+
+.btn-primary {
+    --bs-btn-color: rgb(248, 249, 250);
+    --bs-btn-hover-color: rgb(248, 249, 250);
+    --bs-btn-active-color: rgb(248, 249, 250);
+    --bs-btn-disabled-color: rgb(248, 249, 250);
+}
+
+.animated-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    background: rgb(255, 63, 63);
+    background-image: var(--bs-gradient) !important;
+    color: #f8f9fa;
+    font-size: 24px;
+}
+
+.animated-btn::before,
+.animated-btn::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    background: rgba(255, 63, 63, 0.8);
+    animation: ripple-1 2s infinite ease-in-out;
+    z-index: -1;
+}
+
+.animated-btn::after {
+    background: rgba(255, 63, 63, 0.6);
+    animation: ripple-2 2s infinite ease-in-out;
+    animation-delay: 0.5s;
+}
+
+@keyframes ripple-1 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes ripple-2 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}
+
+#img-gallery:hover {
+    cursor: pointer;
+}
+
+#clockContainer {
+    position: relative;
+    margin: auto;
+    height: 20vw;
+    width: 20vw;
+    background: url("/assets/img/clock_face.png") no-repeat;
+    background-size: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    #clockContainer {
+        height: 45vw;
+        width: 45vw;
+    }
+}
+
+#hour,
+#minute,
+#second {
+    position: absolute;
+    border-radius: 10px;
+    transform-origin: bottom;
+}
+
+#hour,
+#minute {
+    background: black;
+}
+
+#second {
+    background: red;
+}
+
+#hour {
+    width: 1.8%;
+    height: 25%;
+    top: 25%;
+    left: 48.85%;
+    opacity: 0.8;
+}
+
+#minute {
+    width: 1.6%;
+    height: 30%;
+    top: 19%;
+    left: 48.9%;
+    opacity: 0.8;
+}
+
+#second {
+    width: 1%;
+    height: 40%;
+    top: 9%;
+    left: 49.25%;
+    opacity: 0.8;
+}
+
+#floatingBtnShow {
+    margin-bottom: 1rem !important;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}

@@ -1,0 +1,37 @@
+{
+    "short_name": "Tai Loc Hostel",
+    "name": "Tai Loc Hostel",
+    "icons": [
+        {
+            "src": "https://raw.githubusercontent.com/sangldq0321/ldqs.epizy.com/master/public/assets/img/logo.svg",
+            "type": "image/svg+xml",
+            "sizes": "512x512"
+        },
+        {
+            "src": "https://raw.githubusercontent.com/sangldq0321/ldqs.epizy.com/master/public/assets/img/logo.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "id": "/",
+    "start_url": "/",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#04243c",
+    "description": "Tai Loc Hostel - a hostel website",
+    "screenshots": [
+        {
+            "src": "https://raw.githubusercontent.com/sangldq0321/ldqs.epizy.com/master/public/assets/img/logo.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "form_factor": "narrow"
+        },
+        {
+            "src": "https://raw.githubusercontent.com/sangldq0321/ldqs.epizy.com/master/public/assets/img/logo.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "form_factor": "wide"
+        }
+    ]
+}
