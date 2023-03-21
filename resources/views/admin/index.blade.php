@@ -134,7 +134,7 @@
         ss = (ss < 10) ? "0" + ss : ss;
 
         let time = hh + ":" + mm + ":" + ss + " " + session;
-        let currentDate = new Date().toJSON().slice(0, 10);
+        let currentDate = new Date().toLocaleDateString();
         document.getElementById("clock").innerText = time;
         document.getElementById("date").innerText = currentDate;
         var t = setTimeout(function() {
