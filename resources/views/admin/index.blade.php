@@ -21,6 +21,7 @@
             <div class="text-center shadow p-3 rounded-3">
                 <div class="bg-light container h5 fw-bold">
                     <div class="h4">Current date</div>
+                    <div id="date"></div>
                     <div class="d-flex justify-content-center">
                     </div>
                 </div>
@@ -133,8 +134,9 @@
         ss = (ss < 10) ? "0" + ss : ss;
 
         let time = hh + ":" + mm + ":" + ss + " " + session;
-
+        let currentDate = new Date().toJSON().slice(0, 10);
         document.getElementById("clock").innerText = time;
+        document.getElementById("date").innerText = currentDate;
         var t = setTimeout(function() {
             currentTime()
         }, 1000);
