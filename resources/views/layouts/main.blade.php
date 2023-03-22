@@ -265,7 +265,7 @@
             @endguest
             <div class="d-flex justify-content-center">
                 <div class="alert alert-danger">
-                    <div><i class="fa-solid fa-triangle-exclamation me-2"></i>{!! __('Translation is not complete') !!} !</div>
+                    <div><i class="fa-solid fa-triangle-exclamation me-2"></i>{!! __('Translation for <b>VN</b> is not complete') !!} !</div>
                 </div>
             </div>
             <div class="dropup">
@@ -332,10 +332,6 @@
                     @endauth
                     <div class="col text-center text-lg-start">
                         <h5 class="fw-bold" style="color:rgba(248, 177, 21, 1);">{!! __('Maps') !!}:</h5>
-                        <a href="https://www.google.com/maps/place/10%C2%B023'47.2%22N+105%C2%B025'15.8%22E/@10.3963101,105.4211017,19.96z/data=!4m4!3m3!8m2!3d10.39643!4d105.421065"
-                            type="button" target="_blank"><img class="lazy img-fluid rounded-3"
-                                src="/assets/img/img.svg" data-src="/assets/img/map.jpeg" style="width:600px;"
-                                title="Click to open Google Maps"></a>
                     </div>
                 </div>
             </div>
