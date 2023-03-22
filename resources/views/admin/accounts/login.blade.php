@@ -14,6 +14,17 @@
                 </div>
             </div>
         @endif
+        @if (Session::has('message'))
+            <script>
+                Swal.fire({
+                    title: 'You not an administrator',
+                    text: 'Please log in to continue !',
+                    icon: 'error',
+                    scrollbarPadding: false,
+                    allowOutsideClick: false,
+                })
+            </script>
+        @endif
         <div class="form-floating">
             <input type="text" class="form-control" id="floatingUsername" placeholder="Username" name="username">
             <label for="floatingInput">Username</label>

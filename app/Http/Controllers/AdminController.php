@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Room;
+use Auth;
 use File;
 use Illuminate\Http\Request;
 use App\Models\User;

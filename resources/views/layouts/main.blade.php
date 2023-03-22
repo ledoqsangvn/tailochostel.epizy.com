@@ -272,12 +272,10 @@
                 <button class="animated-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                         class="fa-solid fa-comment"></i></button>
                 <ul class="dropdown-menu dropdown-menu-lg-end" id="floatingBtnShow">
-                    <li><button class="dropdown-item p-2 d-flex align-items-center displayMess"
-                            data-toggle="tooltip"><img class="me-2" src="/assets/img/messenger.svg" width="56px"
-                                height="auto">Messenger</button></li>
-                    <li><button class="dropdown-item p-2 d-flex align-items-center displayMess"
-                            data-toggle="tooltip"><img class="me-2" src="/assets/img/zalo.svg" width="56px"
-                                height="auto">Zalo</button></li>
+                    <li><a href="https://www.messenger.com/t/100049253115031" target="_blank" class="dropdown-item p-2 d-flex align-items-center"><img class="me-2" src="/assets/img/messenger.svg" width="56px"
+                                height="auto">Messenger</a></li>
+                    <li><a href="https://zalo.me/0886623971" target="_blank" class="dropdown-item p-2 d-flex align-items-center"><img class="me-2" src="/assets/img/zalo.svg" width="56px"
+                                height="auto">Zalo</a></li>
                 </ul>
             </div>
             @yield('content')
