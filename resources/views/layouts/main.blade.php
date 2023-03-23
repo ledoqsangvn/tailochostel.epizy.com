@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-100">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -138,7 +138,7 @@
     <link rel="stylesheet" href="/assets/css/lightgallery-bundle.min.css">
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column">
     <header>
         <nav class="navbar navbar-expand-lg shadow bg-gradient">
             <div class="container-fluid">
