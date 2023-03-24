@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-100">
 
 <head>
     <meta charset="utf-8">
@@ -138,7 +138,7 @@
     <link rel="stylesheet" href="/assets/css/lightgallery-bundle.min.css">
 </head>
 
-<body class="d-flex flex-column">
+<body class="d-flex flex-column h-100">
     <header>
         <nav class="navbar navbar-expand-lg shadow bg-gradient">
             <div class="container-fluid">
@@ -256,12 +256,6 @@
                 </div>
             </form>
             @endguest
-            <div class="d-flex justify-content-center">
-                <div class="alert alert-danger">
-                    <div><i class="fa-solid fa-triangle-exclamation me-2"></i>{!! __('Translation for <b>VN</b> is not
-                        complete') !!} !</div>
-                </div>
-            </div>
             <div class="dropup">
                 <button class="animated-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                         class="fa-solid fa-comment"></i></button>
@@ -303,7 +297,8 @@
                         <img class="mb-2" src="/assets/img/logo.svg" width="40px" height="auto">
                         <h5 class="fw-bold mb-2" style="color:rgba(248, 177, 21, 1);">{!! __('Tai Loc Hostel') !!}</h5>
                         <p class="mb-0"><b>{!! __('Tai Loc Hostel') !!}</b> {!! __('is a hostel for <b>students</b> with
-                            <b>good price</b>') !!}.</p>
+                            <b>good price</b>') !!}.
+                        </p>
                     </div>
                     <div class="col text-center text-lg-start">
                         <h5 class="fw-bold" style="color:rgba(248, 177, 21, 1);">{!! __('Rooms') !!}:</h5>
