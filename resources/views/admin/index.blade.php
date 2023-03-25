@@ -17,13 +17,11 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col d-flex align-items-center justify-content-center">
             <div class="text-center shadow p-3 rounded-3">
                 <div class="bg-light container h5 fw-bold">
                     <div class="h4">Current date</div>
                     <div id="date"></div>
-                    <div class="d-flex justify-content-center">
-                    </div>
                 </div>
             </div>
         </div>
@@ -35,11 +33,13 @@
             <h5 class="fw-bold">{!! __('Rented') !!} / {!! __('Available') !!} (rooms)</h5>
             <canvas id="pieChart" class="mb-3 w-25 h-25 mx-auto"></canvas>
             <div>Total rooms: <b>{{ $countAll }}</b> rooms</div>
-            <div><b style="color: #fc6484;">{!! __('Rented rooms') !!}</b>: {!! number_format((float) $percentRented, 0) !!}%
+            <div><b style="color: #fc6484;">{!! __('Rented rooms') !!}</b>: {!! number_format((float) $percentRented, 0)
+                !!}%
                 (<b>{{ $countRented }}</b>
                 rooms)
             </div>
-            <div><b style="color:#34a4ec;">{!! __('Available rooms') !!}</b>: {!! number_format((float) $percentAvailable, 0) !!}%
+            <div><b style="color:#34a4ec;">{!! __('Available rooms') !!}</b>: {!! number_format((float)
+                $percentAvailable, 0) !!}%
                 (<b>{{ $countAvailable }}</b>
                 rooms)</div>
         </div>
@@ -48,21 +48,23 @@
         <div class="text-center shadow rounded-3 p-3">
             <h5 class="fw-bold">Rooms rented per month (rooms)</h5>
             <canvas id="lineChart" class="mb-3 mx-auto w-75 h-75"></canvas>
-            <div>Year: <b><?php echo date('Y'); ?></b></div>
+            <div>Year: <b>
+                    <?php echo date('Y'); ?>
+                </b></div>
         </div>
     </div>
 </div>
 
 @if (session('notify') == 'Login success')
-    <script>
-        Swal.fire({
+<script>
+    Swal.fire({
             title: 'Login success',
             icon: 'success',
             timer: 2000,
             showConfirmButton: false,
             allowOutsideClick: false,
         })
-    </script>
+</script>
 @endif
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script type="text/javascript">

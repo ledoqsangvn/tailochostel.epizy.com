@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('content')
 @section('title', 'Manage room')
+<h3 class="text-center mb-3 fw-bold">Manage pending rooms</h3>
 <table class="table table-hover w-100" id="roomTable">
     <thead class="table-dark">
         <tr>
@@ -28,7 +29,7 @@
                 <img class="lazy" src="/assets/img/img.svg" data-src="/assets/img/rooms/{{ $pending->roomImg }}"
                     width="auto" height="128px" alt="Room {{ $pending->roomNo }} image">
             </td>
-            <td>{{ $pending->state }}</td>
+            <td class="text-warning">{{ $pending->state }}</td>
             <td><a href="/rooms/view/{{ $pending->id }}" class="btn btn-success"><i
                         class="fa-solid fa-eye me-2"></i>View</a></td>
             @auth
@@ -36,8 +37,8 @@
                 <form method="POST" action="/pending/confirm/{{ $pending->id }}">
                     @csrf
                     <input name="_method" type="hidden" value="GET">
-                    <a type="submit" class="btn btn-danger room_confirm" data-toggle="tooltip"><i
-                            class="fa-solid fa-trash me-2"></i>Confirm</a>
+                    <a type="submit" class="btn btn-warning room_confirm" data-toggle="tooltip"><i
+                            class="fa-solid fa-check me-2"></i>Confirm</a>
                 </form>
             </td>
             <td>
@@ -60,7 +61,7 @@
         event.preventDefault();
         Swal.fire({
             title: 'Are you sure ?',
-            text: 'Are you sure to update this room ?',
+            text: 'Are you sure to confirm this room ?',
             icon: 'question',
             showCancelButton: true,
             scrollbarPadding: false,
