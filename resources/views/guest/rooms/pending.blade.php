@@ -10,8 +10,9 @@
             <th scope="col">{!! __('Price') !!}</th>
             <th scope="col">Room image</th>
             <th scope="col">State</th>
-            @auth
             <th scope="col">View</th>
+            @auth
+            <th scope="col">Confirm</th>
             <th scope="col">Delete</th>
             @endauth
         </tr>
@@ -30,6 +31,15 @@
             <td>{{ $pending->state }}</td>
             <td><a href="/rooms/view/{{ $pending->id }}" class="btn btn-success"><i
                         class="fa-solid fa-eye me-2"></i>View</a></td>
+            @auth
+            <td>
+                <form method="POST" action="/pending/confirm/{{ $pending->id }}">
+                    @csrf
+                    <input name="_method" type="hidden" value="GET">
+                    <a type="submit" class="btn btn-danger room_confirm" data-toggle="tooltip"><i
+                            class="fa-solid fa-trash me-2"></i>Confirm</a>
+                </form>
+            </td>
             <td>
                 <form method="POST" action="/pending/delete/{{ $pending->id }}">
                     @csrf
@@ -38,10 +48,33 @@
                             class="fa-solid fa-trash me-2"></i>Delete</a>
                 </form>
             </td>
+            @endauth
         </tr>
         @endforeach
     </tbody>
 </table>
+<script script type="text/javascript">
+    $('.room_confirm').click(function(event) {
+        var form = $(this).closest("form");
+        var name = $(this).data("name");
+        event.preventDefault();
+        Swal.fire({
+            title: 'Are you sure ?',
+            text: 'Are you sure to update this room ?',
+            icon: 'question',
+            showCancelButton: true,
+            scrollbarPadding: false,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'No',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                form.submit();
+            }
+        });
+    });
+</script>
 <script script type="text/javascript">
     $('.show_delete').click(function(event) {
         var form = $(this).closest("form");

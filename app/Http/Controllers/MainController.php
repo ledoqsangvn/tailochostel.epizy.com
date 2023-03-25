@@ -91,6 +91,19 @@ class MainController extends Controller
 
         return redirect()->back();
     }
+    public function confirmPending($id_pending)
+    {
+        $pending = Pending::findOrFail($id_pending);
+        $pending->delete();
+        $room = Room::findOrFail($id_pending);
+        if ($room->state == "pending") {
+            $room->state = 'rented';
+        } else {
+            $room->state = 'rented';
+        }
+        $room->update();
+        return redirect('/rooms/status/pending');
+    }
     public function deletePending($id_pending)
     {
         $pending = Pending::findOrFail($id_pending);

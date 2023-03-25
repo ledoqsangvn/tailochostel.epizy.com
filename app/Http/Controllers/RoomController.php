@@ -62,6 +62,6 @@ class RoomController extends Controller
             $room->state = 'available';
         }
         $room->update();
-        return redirect('/rooms/all');
+        return redirect('/admin/manage/rooms');
     }
 }
