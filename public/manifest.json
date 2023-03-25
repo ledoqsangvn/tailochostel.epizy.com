@@ -16,7 +16,7 @@
     "id": "/",
     "start_url": "/",
     "background_color": "#ffffff",
-    "display": "standalone",
+    "display": "fullscreen",
     "scope": "/",
     "theme_color": "#04243c",
     "description": "Tai Loc Hostel - a hostel website",

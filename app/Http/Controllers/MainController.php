@@ -16,7 +16,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $rooms = DB::table('rooms')->where('state', 'available')->take(3)->get();
+        $rooms = DB::table('rooms')->where('state', 'available')->inRandomOrder()->limit('3')->get();
         $countAvailable = Room::all()->where('state', 'available')->count();
         return view('guest.index', compact('rooms', 'countAvailable'));
     }
@@ -39,7 +39,7 @@ class MainController extends Controller
             $rooms = DB::table('rooms')->where('state', $room_state)->paginate(8);
             $count = DB::table('rooms')->where('state', $room_state)->count();
             $heading = __("Available rooms");
-        }else{
+        } else {
             return redirect('/rooms/all');
         }
         return view('guest.rooms.index', compact('rooms', 'heading', 'count', 'countAll', 'countAvailable', 'countRented'));
