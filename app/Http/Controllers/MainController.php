@@ -39,6 +39,8 @@ class MainController extends Controller
             $rooms = DB::table('rooms')->where('state', $room_state)->paginate(8);
             $count = DB::table('rooms')->where('state', $room_state)->count();
             $heading = __("Available rooms");
+        }else{
+            return redirect('/rooms/all');
         }
         return view('guest.rooms.index', compact('rooms', 'heading', 'count', 'countAll', 'countAvailable', 'countRented'));
     }
