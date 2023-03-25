@@ -176,63 +176,6 @@ html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
     cursor: pointer;
 }
 
-#clockContainer {
-    position: relative;
-    margin: auto;
-    height: 20vw;
-    width: 20vw;
-    background: url("/assets/img/clock_face.png") no-repeat;
-    background-size: 100%;
-}
-
-@media screen and (max-width: 768px) {
-    #clockContainer {
-        height: 45vw;
-        width: 45vw;
-    }
-}
-
-#hour,
-#minute,
-#second {
-    position: absolute;
-    border-radius: 10px;
-    transform-origin: bottom;
-}
-
-#hour,
-#minute {
-    background: black;
-}
-
-#second {
-    background: red;
-}
-
-#hour {
-    width: 1.8%;
-    height: 25%;
-    top: 25%;
-    left: 48.85%;
-    opacity: 0.8;
-}
-
-#minute {
-    width: 1.6%;
-    height: 30%;
-    top: 19%;
-    left: 48.9%;
-    opacity: 0.8;
-}
-
-#second {
-    width: 1%;
-    height: 40%;
-    top: 9%;
-    left: 49.25%;
-    opacity: 0.8;
-}
-
 #floatingBtnShow {
     margin-bottom: 1rem !important;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;

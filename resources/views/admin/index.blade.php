@@ -9,15 +9,10 @@
                 <div class="bg-light container h5 fw-bold">
                     <div class="h4">Current time</div>
                     <div id="clock"></div>
-                    <div id="clockContainer">
-                        <div id="hour"></div>
-                        <div id="minute"></div>
-                        <div id="second"></div>
-                    </div>
                 </div>
             </div>
         </div>
-        <div class="col d-flex align-items-center justify-content-center">
+        <div class="col">
             <div class="text-center shadow p-3 rounded-3">
                 <div class="bg-light container h5 fw-bold">
                     <div class="h4">Current date</div>
@@ -146,20 +141,5 @@
     }
 
     currentTime();
-</script>
-<script>
-    setInterval(() => {
-        d = new Date(); //object of date()
-        hr = d.getHours();
-        min = d.getMinutes();
-        sec = d.getSeconds();
-        hr_rotation = 30 * hr + min / 2; //converting current time
-        min_rotation = 6 * min;
-        sec_rotation = 6 * sec;
-
-        hour.style.transform = `rotate(${hr_rotation}deg)`;
-        minute.style.transform = `rotate(${min_rotation}deg)`;
-        second.style.transform = `rotate(${sec_rotation}deg)`;
-    }, 1000);
 </script>
 @endsection
