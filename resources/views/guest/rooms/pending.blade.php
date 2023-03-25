@@ -12,7 +12,6 @@
             <th scope="col">State</th>
             @auth
             <th scope="col">View</th>
-            <th scope="col">Edit</th>
             <th scope="col">Delete</th>
             @endauth
         </tr>
@@ -29,8 +28,6 @@
                     width="auto" height="128px" alt="Room {{ $pending->roomNo }} image">
             </td>
             <td>{{ $pending->state }}</td>
-            @auth
-            <td></td>
             <td><a href="/rooms/view/{{ $pending->id }}" class="btn btn-success"><i
                         class="fa-solid fa-eye me-2"></i>View</a></td>
             <td>
@@ -41,7 +38,6 @@
                             class="fa-solid fa-trash me-2"></i>Delete</a>
                 </form>
             </td>
-            @endauth
         </tr>
         @endforeach
     </tbody>
