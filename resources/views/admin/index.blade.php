@@ -6,16 +6,16 @@
     <div class="row row-cols-1 row-cols-lg-2 g-3">
         <div class="col">
             <div class="text-center d-flex justify-content-center shadow p-3 rounded-3">
-                <div class="bg-light container h5 fw-bold">
-                    <div class="h4">Current time</div>
+                <div class="bg-light container h5">
+                    <div class="h4 fw-bold">Current time</div>
                     <div id="clock"></div>
                 </div>
             </div>
         </div>
         <div class="col">
             <div class="text-center shadow p-3 rounded-3">
-                <div class="bg-light container h5 fw-bold">
-                    <div class="h4">Current date</div>
+                <div class="bg-light container h5">
+                    <div class="h4 fw-bold">Current date</div>
                     <div id="date"></div>
                 </div>
             </div>
