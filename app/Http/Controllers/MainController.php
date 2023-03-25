@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App;
+use App\Models\Pending;
 use App\Models\Room;
 use App\Models\User;
 use Auth;
@@ -63,19 +64,44 @@ class MainController extends Controller
         $room = Room::findOrFail($id_room);
         return view('guest.rooms.view', compact('room'));
     }
-    public function rentRoom($id_room)
+    public function rentRoom(Request $request, $id_room)
     {
         $room = Room::findOrFail($id_room);
         if ($room->state == "available") {
-            $room->state = 'rented';
+            $room->state = 'pending';
         }
         $room->update();
+        $pending = new Pending;
+        $pending->id = $id_room;
+        $pending->save();
         return redirect('/rooms/all');
+    }
+    public function pendingRoom()
+    {
+        $pendings = DB::table('pending')
+            ->select('pending.id')
+            ->join('rooms', 'rooms.id', '=', 'pending.id')
+            ->select('pending.id', 'rooms.*')
+            ->get();
+        return view('guest.rooms.pending', compact('pendings'));
     }
     public function changeLanguage($language)
     {
         \Session::put('locale', $language);
 
         return redirect()->back();
+    }
+    public function deletePending($id_pending)
+    {
+        $pending = Pending::findOrFail($id_pending);
+        $pending->delete();
+        $room = Room::findOrFail($id_pending);
+        if ($room->state == "pending") {
+            $room->state = 'available';
+        } else {
+            $room->state = 'available';
+        }
+        $room->update();
+        return redirect('/rooms/status/pending');
     }
 }

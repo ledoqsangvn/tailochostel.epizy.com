@@ -15,43 +15,45 @@
 </div>
 <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4">
     @foreach ($rooms as $room)
-        <div class="col d-flex align-items-stretch">
-            <div class="card shadow" id="roomCard">
-                <a href="/rooms/view/{{ $room->id }}" class="img-zoom">
-                    <img src="/assets/img/img.svg" data-src="/assets/img/rooms/{{ $room->roomImg }}"
-                        class="card-img-top lazy" width="auto" height="256px" alt="Room image">
+    <div class="col d-flex align-items-stretch">
+        <div class="card shadow" id="roomCard">
+            <a href="/rooms/view/{{ $room->id }}" class="img-zoom">
+                <img src="/assets/img/img.svg" data-src="/assets/img/rooms/{{ $room->roomImg }}"
+                    class="card-img-top lazy" width="auto" height="256px" alt="Room image">
+            </a>
+            <div class="card-body">
+                <a href="/rooms/view/{{ $room->id }}">
+                    <h5 class="card-title">{!! __('Room number') !!}: <b>{{ $room->roomNo }}</b></h5>
                 </a>
-                <div class="card-body">
-                    <a href="/rooms/view/{{ $room->id }}">
-                        <h5 class="card-title">{!! __('Room number') !!}: <b>{{ $room->roomNo }}</b></h5>
-                    </a>
-                    <div class="card-text">{!! __('Floor') !!}: <b>{{ $room->roomFloor }}</b></div>
-                    <div class="card-text">{!! __('Price') !!}: <b>
-                            <?php echo number_format("$room->roomPrice", 0); ?>
-                        </b> VND</div>
-                    <div class="card-text mb-3">
-                        @if ($room->state == 'rented')
-                            {!! __('Rented at') !!}:
-                            <b>{{ $room->updated_at }}</b>
+                <div class="card-text">{!! __('Floor') !!}: <b>{{ $room->roomFloor }}</b></div>
+                <div class="card-text">{!! __('Price') !!}: <b>
+                        <?php echo number_format("$room->roomPrice", 0); ?>
+                    </b> VND</div>
+                <div class="card-text mb-3">
+                    @if ($room->state == 'rented')
+                    {!! __('Rented at') !!}:
+                    <b>{{ $room->updated_at }}</b>
+                    @endif
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="btn-group" role="group" aria-label="Modify button">
+                        @if ($room->state == 'available')
+                        <form method="POST" action="/rooms/modify/rent/{{ $room->id }}">
+                            @csrf
+                            <input name="_method" type="hidden" value="GET">
+                            <a type="submit" class="btn btn-success show_confirm" data-toggle="tooltip">{!! __('Rent')
+                                !!}</a>
+                        </form>
+                        @elseif ($room->state == 'rented')
+                        <button class="btn btn-danger disabled">{!! __('Rented') !!}</button>
+                        @else
+                        <button class="btn btn-warning disabled">{!! __('Pending') !!}</button>
                         @endif
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <div class="btn-group" role="group" aria-label="Modify button">
-                            @if ($room->state == 'available')
-                                <form method="POST" action="/rooms/modify/rent/{{ $room->id }}">
-                                    @csrf
-                                    <input name="_method" type="hidden" value="GET">
-                                    <a type="submit" class="btn btn-success show_confirm"
-                                        data-toggle="tooltip">{!! __('Rent') !!}</a>
-                                </form>
-                            @elseif ($room->state == 'rented')
-                                <button class="btn btn-danger disabled">{!! __('Rented') !!}</button>
-                            @endif
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     @endforeach
 </div>
 <div class="mt-3 d-flex justify-content-center">

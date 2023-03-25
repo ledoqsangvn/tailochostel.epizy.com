@@ -179,6 +179,38 @@
                     </form>
                     @endguest
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                        @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login"><i class="fa-solid fa-right-to-bracket me-2"></i>{!!
+                                __('Log in') !!}</a>
+                        </li>
+                        @endguest
+                        <li class="nav-item">
+                            <a class="nav-link" href="/rooms/status/pending"><i
+                                    class="fa-solid fa-hourglass-start me-2"></i>Pending rooms <span
+                                    class="badge bg-danger">{{$countPending}}</span></a>
+                        </li>
+                        @auth
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><span class="me-2"><img
+                                        src="/assets/img/img.svg"
+                                        data-src="/assets/img/avatar/{{ Auth::user()->avatar }}" class="me-2 lazy"
+                                        width="32" height="auto" alt="Avatar">{{ Auth::user()->fullname }}</span></a>
+                            <ul class="dropdown-menu dropdown-menu-lg-end">
+                                <li><a class="dropdown-item" href="/user/view/{{ Auth::user()->id }}"><i
+                                            class="fa-solid fa-user me-2"></i>{!! __('View profile') !!}</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="/logout"><i
+                                            class="fa-solid fa-right-from-bracket me-2"></i>{!! __('Log out') !!}</a>
+                                </li>
+                            </ul>
+                        </li>
+                        @endauth
                         <li class="nav-item dropdown me-0 me-lg-2">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -202,7 +234,8 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/lang/en">
+                                <li>
+                                    <a class="dropdown-item" href="/lang/en">
                                         @if (app()->getLocale() == 'en')
                                         <span class="fw-bold d-flex align-items-center"><img class="me-2"
                                                 src="/assets/img/us.svg" style="width: auto;height:1.25rem;">EN<i
@@ -211,35 +244,10 @@
                                         <span class="d-flex align-items-center"><img class="me-2"
                                                 src="/assets/img/us.svg" style="width: auto;height:1.25rem;">EN</span>
                                         @endif
-                                    </a></li>
-                            </ul>
-                        </li>
-                        @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="/login"><i class="fa-solid fa-right-to-bracket me-2"></i>{!!
-                                __('Log in') !!}</a>
-                        </li>
-                        @endguest
-                        @auth
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false"><span class="me-2"><img
-                                        src="/assets/img/img.svg"
-                                        data-src="/assets/img/avatar/{{ Auth::user()->avatar }}" class="me-2 lazy"
-                                        width="32" height="auto" alt="Avatar">{{ Auth::user()->fullname }}</span></a>
-                            <ul class="dropdown-menu dropdown-menu-lg-end">
-                                <li><a class="dropdown-item" href="/user/view/{{ Auth::user()->id }}"><i
-                                            class="fa-solid fa-user me-2"></i>{!! __('View profile') !!}</a>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="/logout"><i
-                                            class="fa-solid fa-right-from-bracket me-2"></i>{!! __('Log out') !!}</a>
+                                    </a>
                                 </li>
                             </ul>
                         </li>
-                        @endauth
                     </ul>
                 </div>
             </div>
