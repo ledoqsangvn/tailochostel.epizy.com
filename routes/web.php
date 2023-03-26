@@ -18,12 +18,14 @@ use App\Http\Controllers\AdminController;
 */
 Route::group(['middleware' => 'localization'], function () {
     Route::get('/lang/{language}', [MainController::class, 'changeLanguage']);
+    Route::get('/pending/delete/{id}', [MainController::class, 'deletePending']);
     Route::get('/', [MainController::class, 'index']);
     Route::get('/rooms/{room_state}', [MainController::class, 'allRoom']);
     Route::get('/search', [MainController::class, 'search']);
     Route::get('/rooms/view/{id}', [MainController::class, 'viewRoom']);
     Route::get('/rooms/status/pending', [MainController::class, 'pendingRoom']);
-    Route::get('/rooms/modify/rent/{id}', [MainController::class, 'rentRoom']);
+    Route::get('/rooms/modify/rent/{id}', [MainController::class, 'getRentRoom']);
+    Route::post('/rooms/modify/rent/{id}', [MainController::class, 'postRentRoom']);
     Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
     Route::post('/login', [LoginController::class, 'postLogin']);
     Route::group(['middleware' => ['auth']], function () {
@@ -34,7 +36,6 @@ Route::group(['middleware' => 'localization'], function () {
         Route::get('/rooms/modify/edit/{id}', [RoomController::class, 'edit']);
         Route::post('/rooms/modify/edit/{id}', [RoomController::class, 'postEdit']);
         Route::get('/rooms/modify/delete/{id}', [RoomController::class, 'deleteRoom']);
-        Route::get('/pending/delete/{id}', [MainController::class, 'deletePending']);
         Route::get('/pending/confirm/{id}', [MainController::class, 'confirmPending']);
         Route::get('/user/view/{id}', [AdminController::class, 'viewProfile'])->name('viewProfile');
         Route::get('/user/edit/{id}', [AdminController::class, 'editProfile']);

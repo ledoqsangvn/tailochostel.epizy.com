@@ -11,5 +11,7 @@ class Pending extends Model
     protected $table = "pending";
     protected $fillable = [
         'id',
+        'rentalName',
+        'phoneNumber'
     ];
 }

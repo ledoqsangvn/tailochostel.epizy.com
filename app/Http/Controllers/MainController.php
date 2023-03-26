@@ -66,15 +66,29 @@ class MainController extends Controller
         $room = Room::findOrFail($id_room);
         return view('guest.rooms.view', compact('room'));
     }
-    public function rentRoom(Request $request, $id_room)
+    public function getRentRoom($id_room)
+    {
+        $room = Room::findOrFail($id_room);
+        return view('guest.rooms.rent', compact('room'));
+    }
+    public function postRentRoom(Request $request, $id_room)
     {
         $room = Room::findOrFail($id_room);
         if ($room->state == "available") {
             $room->state = 'pending';
         }
         $room->update();
+        $this->validate($request, [
+            'rentalName' => 'required',
+            'phoneNumber' => 'required'
+        ], [
+                'rentalName.required' => 'Please enter your name',
+                'phoneNumber.required' => 'Please enter phone number'
+            ]);
         $pending = new Pending;
         $pending->id = $id_room;
+        $pending->rentalName = $request->input('rentalName');
+        $pending->phoneNumber = $request->input('phoneNumber');
         $pending->save();
         return redirect('/rooms/all');
     }
@@ -83,7 +97,7 @@ class MainController extends Controller
         $pendings = DB::table('pending')
             ->select('pending.id')
             ->join('rooms', 'rooms.id', '=', 'pending.id')
-            ->select('pending.id', 'rooms.*')
+            ->select('pending.*', 'rooms.*')
             ->get();
         return view('guest.rooms.pending', compact('pendings'));
     }

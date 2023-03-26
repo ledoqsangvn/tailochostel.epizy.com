@@ -11,11 +11,15 @@
             <th scope="col">{!! __('Price') !!}</th>
             <th scope="col">Room image</th>
             <th scope="col">State</th>
+            @auth
+            <th scope="col">Rental name</th>
+            <th scope="col">Phone number</th>
+            @endauth
             <th scope="col">View</th>
             @auth
             <th scope="col">Confirm</th>
-            <th scope="col">Delete</th>
             @endauth
+            <th scope="col">Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -30,6 +34,10 @@
                     width="auto" height="128px" alt="Room {{ $pending->roomNo }} image">
             </td>
             <td class="text-primary">Pending</td>
+            @auth
+            <td>{{ $pending->rentalName}}</td>
+            <td>{{ $pending->phoneNumber }}</td>
+            @endauth
             <td><a href="/rooms/view/{{ $pending->id }}" class="btn btn-success"><i
                         class="fa-solid fa-eye me-2"></i>View</a></td>
             @auth
@@ -41,6 +49,7 @@
                             class="fa-solid fa-check me-2"></i>Confirm</a>
                 </form>
             </td>
+            @endauth
             <td>
                 <form method="POST" action="/pending/delete/{{ $pending->id }}">
                     @csrf
@@ -49,7 +58,6 @@
                             class="fa-solid fa-trash me-2"></i>Delete</a>
                 </form>
             </td>
-            @endauth
         </tr>
         @endforeach
     </tbody>

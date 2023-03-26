@@ -38,12 +38,8 @@
                 <div class="d-flex justify-content-center">
                     <div class="btn-group" role="group" aria-label="Modify button">
                         @if ($room->state == 'available')
-                        <form method="POST" action="/rooms/modify/rent/{{ $room->id }}">
-                            @csrf
-                            <input name="_method" type="hidden" value="GET">
-                            <a type="submit" class="btn btn-success show_confirm" data-toggle="tooltip">{!! __('Rent')
-                                !!}</a>
-                        </form>
+                        <a type="button" href="/rooms/modify/rent/{{$room->id}}" class="btn btn-success">{!! __('Rent')
+                            !!}</a>
                         @elseif ($room->state == 'rented')
                         <button class="btn btn-danger disabled">{!! __('Rented') !!}</button>
                         @else

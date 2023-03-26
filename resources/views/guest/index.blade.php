@@ -2,8 +2,8 @@
 @section('content')
 @section('title', __('Home'))
 @if (session('notify') == 'Logout success')
-    <script>
-        Swal.fire({
+<script>
+    Swal.fire({
             title: 'Logout success',
             icon: 'success',
             timer: 2000,
@@ -11,7 +11,7 @@
             showConfirmButton: false,
             allowOutsideClick: false,
         })
-    </script>
+</script>
 @endif
 <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2">
     <div class="col">
@@ -25,31 +25,29 @@
 </div>
 <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4">
     @foreach ($rooms as $room)
-        <div class="col d-flex align-items-stretch">
-            <div class="card shadow" id="roomCard">
-                <a href="/rooms/view/{{ $room->id }}" class="img-zoom">
-                    <img src="/assets/img/img.svg" data-src="/assets/img/rooms/{{ $room->roomImg }}"
-                        class="card-img-top lazy" width="auto" height="256px" alt="Room image">
+    <div class="col d-flex align-items-stretch">
+        <div class="card shadow" id="roomCard">
+            <a href="/rooms/view/{{ $room->id }}" class="img-zoom">
+                <img src="/assets/img/img.svg" data-src="/assets/img/rooms/{{ $room->roomImg }}"
+                    class="card-img-top lazy" width="auto" height="256px" alt="Room image">
+            </a>
+            <div class="card-body">
+                <a href="/rooms/view/{{ $room->id }}">
+                    <h5 class="card-title">{!! __('Room number') !!}: <b>{{ $room->roomNo }}</b></h5>
                 </a>
-                <div class="card-body">
-                    <a href="/rooms/view/{{ $room->id }}">
-                        <h5 class="card-title">{!! __('Room number') !!}: <b>{{ $room->roomNo }}</b></h5>
-                    </a>
-                    <div class="card-text">{!! __('Floor') !!}: <b>{{ $room->roomFloor }}</b></div>
-                    <div class="card-text mb-3">{!! __('Price') !!}: <b><?php echo number_format("$room->roomPrice", 0); ?></b> VND</div>
-                    <div class="d-flex justify-content-center">
-                        <div class="btn-group" role="group" aria-label="Modify button">
-                            <form method="POST" action="/rooms/modify/rent/{{ $room->id }}">
-                                @csrf
-                                <input name="_method" type="hidden" value="GET">
-                                <a type="submit" class="btn btn-success show_confirm"
-                                    data-toggle="tooltip">{!! __('Rent') !!}</a>
-                            </form>
-                        </div>
+                <div class="card-text">{!! __('Floor') !!}: <b>{{ $room->roomFloor }}</b></div>
+                <div class="card-text mb-3">{!! __('Price') !!}: <b>
+                        <?php echo number_format("$room->roomPrice", 0); ?>
+                    </b> VND</div>
+                <div class="d-flex justify-content-center">
+                    <div class="btn-group" role="group" aria-label="Modify button">
+                        <a type="button" href="/rooms/modify/rent/{{$room->id}}" class="btn btn-success">{!! __('Rent')
+                            !!}</a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     @endforeach
 </div>
 <script script type="text/javascript">
