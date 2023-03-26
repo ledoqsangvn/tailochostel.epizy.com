@@ -93,6 +93,11 @@ class AdminController extends Controller
     }
     public function updateProfile(Request $request, $id_user)
     {
+        $this->validate($request, [
+            'avatar' => 'max:2048'
+        ], [
+                'avatar.max' => 'File upload maximum is 2MB'
+            ]);
         $user = User::findOrFail($id_user);
         $user->fullname = $request->input('fullname');
         if ($request->hasfile('avatar')) {

@@ -13,11 +13,6 @@
         })
     </script>
 @endif
-@auth
-    <div class="d-flex justify-content-center mb-3">
-        <a href="/rooms/modify/add" class="btn btn-success"><i class="fa-solid fa-plus me-2"></i>Add</a>
-    </div>
-@endauth
 <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2">
     <div class="col">
         <h3 class="mb-3 fw-bold">{!! __('Available rooms') !!} ({{ $countAvailable }})</span>

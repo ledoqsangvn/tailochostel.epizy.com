@@ -35,6 +35,7 @@ Route::group(['middleware' => 'localization'], function () {
         Route::post('/rooms/modify/edit/{id}', [RoomController::class, 'postEdit']);
         Route::get('/rooms/modify/delete/{id}', [RoomController::class, 'deleteRoom']);
         Route::get('/pending/delete/{id}', [MainController::class, 'deletePending']);
+        Route::get('/pending/confirm/{id}', [MainController::class, 'confirmPending']);
         Route::get('/user/view/{id}', [AdminController::class, 'viewProfile'])->name('viewProfile');
         Route::get('/user/edit/{id}', [AdminController::class, 'editProfile']);
         Route::post('/user/update/{id}', [AdminController::class, 'updateProfile']);

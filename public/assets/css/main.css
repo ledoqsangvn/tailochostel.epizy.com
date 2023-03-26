@@ -179,5 +179,8 @@ html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
 #floatingBtnShow {
     margin-bottom: 1rem !important;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
-    transition: .15s ease-in-out;
+}
+
+#pagination nav ul.pagination {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
 }

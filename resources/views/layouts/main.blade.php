@@ -140,7 +140,7 @@
 
 <body class="d-flex flex-column h-100">
     <header>
-        <nav class="navbar navbar-expand-lg shadow">
+        <nav class="navbar navbar-expand-lg bg-gradient shadow">
             <div class="container-fluid">
                 <a class="navbar-brand me-0 me-lg-3 fw-bold" href="/"><span class="d-flex align-items-center"><img
                             class="me-2" src="/assets/img/logo.svg" width="40px" height="auto">{!! __('Tai Loc Hostel')
@@ -265,7 +265,7 @@
             </form>
             @endguest
             <div class="dropup">
-                <button class="animated-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+                <button class="animated-btn bg-gradient shadow" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                         class="fa-solid fa-comment"></i></button>
                 <ul class="dropdown-menu dropdown-menu-lg-end" id="floatingBtnShow">
                     <li><a href="https://www.messenger.com/t/100049253115031" target="_blank"
@@ -293,7 +293,7 @@
             });
         </script>
     </main>
-    <footer class="mt-auto py-4 text-light">
+    <footer class="mt-auto py-4 text-light bg-gradient">
         <div class="container mb-3">
             @guest
             <div class="row row-cols-1 row-cols-lg-3 g-3">

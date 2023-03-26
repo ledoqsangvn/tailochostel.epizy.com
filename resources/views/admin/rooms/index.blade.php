@@ -39,7 +39,7 @@
                 @elseif ($room->state == 'available')
                 <span class="text-success">{!! __('Available') !!}</span>
                 @else
-                <span class="text-warning">{!! __('Pending') !!}</span>
+                <span class="text-primary">{!! __('Pending') !!}</span>
                 @endif
             </td>
             <td>

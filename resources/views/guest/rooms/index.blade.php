@@ -56,7 +56,7 @@
     </div>
     @endforeach
 </div>
-<div class="mt-3 d-flex justify-content-center">
+<div class="mt-3 d-flex justify-content-center" id="pagination">
     {{ $rooms->links() }}
 </div>
 </div>

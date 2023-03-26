@@ -16,7 +16,7 @@ class MainController extends Controller
 {
     public function index()
     {
-        $rooms = DB::table('rooms')->where('state', 'available')->inRandomOrder()->limit('3')->get();
+        $rooms = DB::table('rooms')->where('state', 'available')->inRandomOrder()->limit('4')->get();
         $countAvailable = Room::all()->where('state', 'available')->count();
         return view('guest.index', compact('rooms', 'countAvailable'));
     }

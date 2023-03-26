@@ -27,3 +27,4 @@ $(function () {
 });
 
 $('input').attr('autocomplete', 'off')
+$('.btn').addClass('bg-gradient')

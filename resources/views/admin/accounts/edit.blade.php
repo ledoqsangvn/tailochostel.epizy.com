@@ -4,6 +4,15 @@
 <h3 class="text-center fw-bold">Edit user</h3>
 <form method="POST" action="/user/update/{{ $user->id }}" enctype="multipart/form-data">
     @csrf
+    @if (count($errors) > 0)
+    <div class="d-flex justify-content-center">
+        <div class="alert alert-danger">
+            @foreach ($errors->all() as $err)
+            <div><i class="fa-solid fa-triangle-exclamation me-2"></i>{{ $err }}</div>
+            @endforeach
+        </div>
+    </div>
+    @endif
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="floatingInput" placeholder="Fullname" name="fullname"
             value="{{ $user->fullname }}">
