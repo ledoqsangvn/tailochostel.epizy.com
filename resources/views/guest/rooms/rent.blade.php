@@ -40,6 +40,7 @@
         </form>
     </div>
 </div>
+@if (Auth::check()==true)
 <script type="text/javascript">
     $('.show_confirm').click(function(event) {
         var form = $(this).closest("form");
@@ -62,6 +63,30 @@
         });
     });
 </script>
+@else
+<script>
+    $('.show_confirm').click(function(event) {
+        var form = $(this).closest("form");
+        var name = $(this).data("name");
+        event.preventDefault();
+        Swal.fire({
+            title: 'Login ?',
+            text: 'Are you sure to rent this room ?',
+            icon: 'question',
+            showCancelButton: true,
+            scrollbarPadding: false,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'No',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                form.submit();
+            }
+        });
+    });
+</script>
+@endif
 <script>
     lightGallery(document.getElementById('lightGallery'), {
         plugins: [lgZoom, lgRotate, lgFullscreen],

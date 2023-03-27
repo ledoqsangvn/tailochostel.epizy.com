@@ -31,9 +31,10 @@
 </head>
 
 <body class="h-100 d-flex align-items-center justify-content-center p-3 position-relative" style="z-index: 1;">
+    @dd(Auth::user())
     <div class="text-center p-3 rounded-3 shadow bg-light text-dark">
-        <span class="d-flex align-items-center justify-content-center h3 mb-3 fw-bold"><img src="/assets/img/logo.svg" class="me-2"
-                width="56px;" height="auto">Tai Loc
+        <span class="d-flex align-items-center justify-content-center h3 mb-3 fw-bold"><img src="/assets/img/logo.svg"
+                class="me-2" width="56px;" height="auto">Tai Loc
             Hostel</span>
         <div class="display-1"><i class="fa-solid fa-triangle-exclamation text-danger"></i></div>
         <h4 class="fw-bold text-danger">@yield('code')</h4>

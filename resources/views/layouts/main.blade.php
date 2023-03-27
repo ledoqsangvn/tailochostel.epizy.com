@@ -140,7 +140,7 @@
 
 <body class="d-flex flex-column h-100">
     <header>
-        <nav class="navbar navbar-expand-lg shadow">
+        <nav class="navbar navbar-expand-lg shadow fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand me-0 me-lg-3 fw-bold" href="/"><span class="d-flex align-items-center"><img
                             class="me-2" src="/assets/img/logo.svg" width="40px" height="auto">{!! __('Tai Loc Hostel')
@@ -286,7 +286,7 @@
                                 src="/assets/img/zalo.svg" width="56px" height="auto">Zalo</a></li>
                 </ul>
             </div>
-            <button class="top-btn shadow" onclick="topFunction()" id="topBtn" title="Go to top"><i
+            <button class="top-btn shadow" onclick="topFunction()" id="topBtn"><i
                     class="fa-solid fa-chevron-up"></i></button>
             @yield('content')
         </div>
