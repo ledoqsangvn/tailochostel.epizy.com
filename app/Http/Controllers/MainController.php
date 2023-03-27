@@ -75,12 +75,12 @@ class MainController extends Controller
     {
         $this->validate($request, [
             'rentalName' => 'required',
-            'phoneNumber' => 'required|numeric|min:10|max:10'
+            'phoneNumber' => 'required|numeric|min:10'
         ], [
                 'rentalName.required' => 'Please enter your name',
                 'phoneNumber.required' => 'Please enter phone number',
                 'phoneNumber.numberic' => 'Phone number must be number',
-                'phoneNumber.min:10|max:10' => 'Phone number must be 10 digits',
+                'phoneNumber.min:10' => 'Phone number must be 10 digits',
             ]);
         $pending = new Pending;
         $pending->id = $id_room;

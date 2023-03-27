@@ -17,8 +17,8 @@
     <meta name="application-name" content="Tai Loc Hostel">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.3.0/css/all.min.css"
-        integrity="sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.3.0/js/all.min.js"
+        integrity="sha256-+rLIGHyZHBDebNqckORMwB+/ueJuy2RqFcYAYlhjkCs=" crossorigin="anonymous"></script>
     <link rel="apple-touch-icon" href="/assets/img/logo.png">
     <link rel="apple-touch-icon-precomposed" href="/assets/img/logo.png">
     <link rel="manifest" crossorigin="use-credentials" href="/manifest.json">
@@ -365,13 +365,8 @@
         integrity="sha256-lSABj6XYH05NydBq+1dvkMu6uiCc/MbLYOFGRkf3iQs=" crossorigin="anonymous"></script>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator
-                .serviceWorker
-                .register(
-                    '/sw.js'
-                )
-                .then(function(reg) {});
-        }
+    navigator.serviceWorker.register('/sw.js');
+}
     </script>
     <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"
         integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-@section('title', 'Admin Home')
+@section('title', 'Dashboard')
 <h3 class="text-center fw-bold">Dashboard</h3>
 <div class="mb-3">
     <div class="row row-cols-1 row-cols-lg-2 g-3">
