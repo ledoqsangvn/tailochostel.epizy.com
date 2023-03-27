@@ -17,17 +17,21 @@
     <meta name="application-name" content="Tai Loc Hostel">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.3.0/css/all.min.css"
+        integrity="sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=" crossorigin="anonymous">
     <link rel="apple-touch-icon" href="/assets/img/logo.png">
     <link rel="apple-touch-icon-precomposed" href="/assets/img/logo.png">
     <link rel="manifest" crossorigin="use-credentials" href="/manifest.json">
-    <script src="/assets/js/jquery.min.js"></script>
-    <link rel="stylesheet" href="/assets/css/sweetalert2.min.css">
-    <script src="/assets/js/sweetalert2.all.min.js"></script>
-    <script src="/assets/js/ckeditor.js"></script>
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css"
+        integrity="sha256-sWZjHQiY9fvheUAOoxrszw9Wphl3zqfVaz1kZKEvot8=" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"
+        integrity="sha256-t0FDfwj/WoMHIBbmFfuOtZv1wtA977QCfsFR3p1K4No=" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha256-wLz3iY/cO4e6vKZ4zRmo4+9XDpMcgKOvv/zEU3OMlRo=" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link href="/assets/css/datatables.min.css" rel="stylesheet" />
     <link rel="apple-touch-startup-image"
         media="screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
         href="/assets/img/ios_splash/iPhone_14_Pro_Max_landscape.png">
@@ -130,12 +134,17 @@
     <link rel="apple-touch-startup-image"
         media="screen and (device-width: 744px) and (device-height: 1133px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
         href="/assets/img/ios_splash/8.3__iPad_Mini_portrait.png">
-    <link rel="icon" href="/assets/img/favicon.ico?date=03212023" type="image/x-icon">
-    <script src="/assets/js/lightgallery.min.js"></script>
-    <script src="/assets/js/lg-zoom.min.js"></script>
-    <script src="/assets/js/lg-rotate.min.js"></script>
-    <script src="/assets/js/lg-fullscreen.min.js"></script>
-    <link rel="stylesheet" href="/assets/css/lightgallery-bundle.min.css">
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"
+        integrity="sha256-5nZ/2843WU4Jpw4eqVWKHsjY0aG4VGag+fzxfKCPq0k=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"
+        integrity="sha256-VfASL/Wqq0hhl9HOIkU9lsi3JYJ8wHlMD/EHp+S2rys=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/rotate/lg-rotate.min.js"
+        integrity="sha256-DiF+g1qKxf0Rksrgh0ZOVJUkyWv6vLn38h75HC7ELfU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/fullscreen/lg-fullscreen.min.js"
+        integrity="sha256-CZuf6RIz+LS8k+ywaKhr7/SrHVs2HGnh6XtqqVInWxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css"
+        integrity="sha256-Eg8Gfr1vMiM54szM1+h+M018fqWyvVU/Ml8q48Oub+g=" crossorigin="anonymous">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -196,7 +205,7 @@
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false"><span class="me-2"><img
                                         src="/assets/img/img.svg"
-                                        data-src="/assets/img/avatar/{{ Auth::user()->avatar }}" class="me-2 lazy"
+                                        data-src="/assets/img/avatar/{{ Auth::user()->avatar }}" class="me-2 lozad"
                                         width="32" height="auto" alt="Avatar">{{ Auth::user()->fullname }}</span></a>
                             <ul class="dropdown-menu dropdown-menu-lg-end">
                                 <li><a class="dropdown-item" href="/user/view/{{ Auth::user()->id }}"><i
@@ -352,7 +361,8 @@
                 </div>
             </div>
     </footer>
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha256-lSABj6XYH05NydBq+1dvkMu6uiCc/MbLYOFGRkf3iQs=" crossorigin="anonymous"></script>
     <script>
         if ('serviceWorker' in navigator) {
             navigator
@@ -363,14 +373,22 @@
                 .then(function(reg) {});
         }
     </script>
-    <script src="/assets/js/yall.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"
+        integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", yall);
+        const observer = lozad();
+        observer.observe();
     </script>
     <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/datatables.min.js"></script>
-    <script src="/assets/js/pdfmake.min.js"></script>
-    <script src="/assets/js/vfs_fonts.js"></script>
+    <link
+        href="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.13.4/b-2.3.6/b-colvis-2.3.6/b-html5-2.3.6/b-print-2.3.6/fc-4.2.2/fh-3.3.2/r-2.4.1/sc-2.1.1/sp-2.1.2/datatables.min.css"
+        rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script
+        src="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.13.4/b-2.3.6/b-colvis-2.3.6/b-html5-2.3.6/b-print-2.3.6/fc-4.2.2/fh-3.3.2/r-2.4.1/sc-2.1.1/sp-2.1.2/datatables.min.js">
+    </script>
+
 </body>
 
 </html>

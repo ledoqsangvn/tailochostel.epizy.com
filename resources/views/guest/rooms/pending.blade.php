@@ -30,7 +30,7 @@
             <td>{{ $pending->roomNo }}</td>
             <td>{{ $pending->roomPrice }}</td>
             <td class="text-center">
-                <img class="lazy" src="/assets/img/img.svg" data-src="/assets/img/rooms/{{ $pending->roomImg }}"
+                <img class="lozad" src="/assets/img/img.svg" data-src="/assets/img/rooms/{{ $pending->roomImg }}"
                     width="auto" height="128px" alt="Room {{ $pending->roomNo }} image">
             </td>
             <td class="text-primary">Pending</td>

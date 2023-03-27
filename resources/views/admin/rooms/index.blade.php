@@ -30,7 +30,7 @@
                 <?php echo number_format("$room->roomPrice", 0); ?> VND
             </td>
             <td class="text-center">
-                <img class="lazy" src="/assets/img/img.svg" data-src="/assets/img/rooms/{{ $room->roomImg }}"
+                <img class="lozad" src="/assets/img/img.svg" data-src="/assets/img/rooms/{{ $room->roomImg }}"
                     width="auto" height="128px" alt="Room {{ $room->roomNo }} image">
             </td>
             <td>

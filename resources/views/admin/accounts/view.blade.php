@@ -10,7 +10,7 @@
             <div class="text-center">
                 <div id="lightGallery">
                     <img src="/assets/img/img.svg" data-src="/assets/img/avatar/{{ $user->avatar }}"
-                        class="card-img-top mb-3 d-block mx-auto lazy" style="width:50%;height:auto;" alt="Avatar"
+                        class="card-img-top mb-3 d-block mx-auto lozad" style="width:50%;height:auto;" alt="Avatar"
                         id="img-gallery">
                 </div>
                 <div class="card-text">Username: <b>{{ $user->username }}</b></div>

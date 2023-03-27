@@ -30,7 +30,7 @@
         <div class="card" id="roomCard">
             <a href="/rooms/view/{{ $room->id }}" class="img-zoom">
                 <img src="/assets/img/img.svg" data-src="/assets/img/rooms/{{ $room->roomImg }}"
-                    class="card-img-top lazy" width="auto" height="256px" alt="Room image">
+                    class="card-img-top lozad" width="auto" height="256px" alt="Room image">
             </a>
             <div class="card-body">
                 <a href="/rooms/view/{{ $room->id }}">
