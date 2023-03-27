@@ -18,11 +18,13 @@ class LoginController extends Controller
     public function postLogin(Request $request)
     {
         $this->validate($request, [
-            'username' => 'required',
-            'password' => 'required'
+            'username' => 'required|min:6',
+            'password' => 'required|min:6'
         ], [
                 'username.required' => 'Please enter username',
-                'password.required' => 'Please enter password'
+                'username.min:6' => 'Username must be 6 or more',
+                'password.required' => 'Please enter password',
+                'password.min:6' => 'Password must be 6 or more'
             ]);
         if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
             return redirect('/admin')->with('notify', 'Login success');

@@ -25,7 +25,7 @@
                 })
             </script>
         @endif
-        <div class="form-floating">
+        <div class="form-floating mb-3">
             <input type="text" class="form-control" id="floatingUsername" placeholder="Username" name="username">
             <label for="floatingInput">Username</label>
         </div>
@@ -34,7 +34,6 @@
             <label for="floatingPassword">Password</label>
         </div>
         <button class="d-block mx-auto btn btn-success" type="submit">{!! __('Log in') !!}</button>
-        <div class="text-center mt-3">&copy; 2023 <b>{!! __('Tai Loc Hostel') !!}</b>. All rights reserved.</div>
     </form>
     @if (session('notify') == 'Login failed')
         <script>

@@ -1,33 +1,43 @@
 @extends('layouts.main')
 @section('content')
 @section('title', 'Add room')
-<a href="/admin/manage/rooms" type="button" class="btn btn-dark mb-3"><i class="fa-solid fa-chevron-left me-2"></i>Back</a>
+<a href="/admin/manage/rooms" type="button" class="btn btn-dark mb-3"><i
+        class="fa-solid fa-chevron-left me-2"></i>Back</a>
 <h3 class="text-center fw-bold">Add room</h3>
 <form method="POST" action="/rooms/modify/add" enctype="multipart/form-data">
     @csrf
+    @if (count($errors) > 0)
+    <div class="d-flex justify-content-center">
+        <div class="alert alert-danger">
+            @foreach ($errors->all() as $err)
+            <div><i class="fa-solid fa-triangle-exclamation me-2"></i>{{ $err }}</div>
+            @endforeach
+        </div>
+    </div>
+    @endif
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" placeholder="{!! __('Room number') !!}"
-            name="roomNo" pattern="[0-9]+" required>
+        <input type="text" class="form-control" id="floatingInput" placeholder="{!! __('Room number') !!}" name="roomNo"
+            pattern="[0-9]+" required>
         <label for="floatingInput">{!! __('Room number') !!}</label>
     </div>
     <div class="mb-3">
         <label for="formFile" class="form-label">Room image</label>
-        <input class="form-control" type="file" id="formFile" name="roomImg" accept=".png, .jpg, .jpeg, .webp"
-            required>
+        <input class="form-control" type="file" id="formFile" name="roomImg" accept=".png, .jpg, .jpeg, .webp" required>
     </div>
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" placeholder="{!! __('Floor') !!}"
-            name="roomFloor" pattern="[0-9]+" required>
+        <input type="text" class="form-control" id="floatingInput" placeholder="{!! __('Floor') !!}" name="roomFloor"
+            pattern="[0-9]+" required>
         <label for="floatingInput">{!! __('Floor') !!}</label>
     </div>
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" placeholder="{!! __('Price') !!}"
-            name="roomPrice" pattern="[0-9]+" required>
+        <input type="text" class="form-control" id="floatingInput" placeholder="{!! __('Price') !!}" name="roomPrice"
+            pattern="[0-9]+" required>
         <label for="floatingInput">{!! __('Price') !!}</label>
     </div>
     <div class="mb-3">
         <label for="roomDescriptionFormControlTextarea1" class="form-label">{!! __('Description') !!}</label>
-        <textarea class="form-control ckeditor" id="roomDescriptionFormControlTextarea1" rows="3" name="roomDescription"></textarea>
+        <textarea class="form-control ckeditor" id="roomDescriptionFormControlTextarea1" rows="3"
+            name="roomDescription"></textarea>
     </div>
     <button type="submit" class="btn btn-success d-block mx-auto">Add</button>
 </form>

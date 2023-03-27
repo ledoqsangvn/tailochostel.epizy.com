@@ -73,23 +73,25 @@ class MainController extends Controller
     }
     public function postRentRoom(Request $request, $id_room)
     {
-        $room = Room::findOrFail($id_room);
-        if ($room->state == "available") {
-            $room->state = 'pending';
-        }
-        $room->update();
         $this->validate($request, [
             'rentalName' => 'required',
-            'phoneNumber' => 'required'
+            'phoneNumber' => 'required|numeric|min:10|max:10'
         ], [
                 'rentalName.required' => 'Please enter your name',
-                'phoneNumber.required' => 'Please enter phone number'
+                'phoneNumber.required' => 'Please enter phone number',
+                'phoneNumber.numberic' => 'Phone number must be number',
+                'phoneNumber.min:10|max:10' => 'Phone number must be 10 digits',
             ]);
         $pending = new Pending;
         $pending->id = $id_room;
         $pending->rentalName = $request->input('rentalName');
         $pending->phoneNumber = $request->input('phoneNumber');
+        $room = Room::findOrFail($id_room);
+        if ($room->state == "available") {
+            $room->state = 'pending';
+        }
         $pending->save();
+        $room->update();
         return redirect('/rooms/all');
     }
     public function pendingRoom()

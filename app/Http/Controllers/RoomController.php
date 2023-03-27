@@ -14,6 +14,11 @@ class RoomController extends Controller
     }
     public function postAddRoom(Request $request)
     {
+        $this->validate($request, [
+            'roomImg' => 'max:2048'
+        ], [
+                'roomImg.max' => 'File upload maximum is 2MB'
+            ]);
         $room = new Room;
         $room->roomNo = $request->input('roomNo');
         $room->roomFloor = $request->input('roomFloor');
@@ -36,6 +41,11 @@ class RoomController extends Controller
     }
     public function postEdit(Request $request, $id_room)
     {
+        $this->validate($request, [
+            'roomImg' => 'max:2048'
+        ], [
+                'roomImg.max' => 'File upload maximum is 2MB'
+            ]);
         $room = Room::findOrFail($id_room);
         $room->roomNo = $request->input('roomNo');
         $room->roomFloor = $request->input('roomFloor');

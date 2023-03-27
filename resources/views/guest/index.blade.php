@@ -23,10 +23,11 @@
                 class="fa-solid fa-chevron-right"></i></a>
     </div>
 </div>
+@if($rooms->isNotEmpty())
 <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4">
     @foreach ($rooms as $room)
     <div class="col d-flex align-items-stretch">
-        <div class="card shadow" id="roomCard">
+        <div class="card" id="roomCard">
             <a href="/rooms/view/{{ $room->id }}" class="img-zoom">
                 <img src="/assets/img/img.svg" data-src="/assets/img/rooms/{{ $room->roomImg }}"
                     class="card-img-top lazy" width="auto" height="256px" alt="Room image">
@@ -50,6 +51,9 @@
     </div>
     @endforeach
 </div>
+@else
+<div class="h4 text-center">No result, please try again !</div>
+@endif
 <script script type="text/javascript">
     $('.show_confirm').click(function(event) {
         var form = $(this).closest("form");

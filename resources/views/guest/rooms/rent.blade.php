@@ -40,7 +40,7 @@
         </form>
     </div>
 </div>
-<script script type="text/javascript">
+<script type="text/javascript">
     $('.show_confirm').click(function(event) {
         var form = $(this).closest("form");
         var name = $(this).data("name");

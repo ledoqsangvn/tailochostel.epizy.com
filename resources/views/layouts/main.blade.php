@@ -140,7 +140,7 @@
 
 <body class="d-flex flex-column h-100">
     <header>
-        <nav class="navbar navbar-expand-lg bg-gradient shadow">
+        <nav class="navbar navbar-expand-lg shadow">
             <div class="container-fluid">
                 <a class="navbar-brand me-0 me-lg-3 fw-bold" href="/"><span class="d-flex align-items-center"><img
                             class="me-2" src="/assets/img/logo.svg" width="40px" height="auto">{!! __('Tai Loc Hostel')
@@ -169,7 +169,7 @@
                         @endauth
                     </ul>
                     @guest
-                    <form class="d-none d-lg-flex rounded-2 w-50" role="search" action="/search">
+                    <form class="d-none d-lg-flex rounded-2" style="width: 25%;" role="search" action="/search">
                         <div class="input-group">
                             <input class="form-control" type="search" placeholder="{!! __('Search') !!}"
                                 aria-label="{!! __('Search') !!}" name="keyword">
@@ -254,6 +254,16 @@
         </nav>
     </header>
     <main class="flex-shrink-0">
+        @if (app()->getLocale() == 'vi')
+        <div class="d-flex justify-content-center">
+            <div class="alert alert-danger mt-4">
+                <div>
+                    <i class="fa-solid fa-triangle-exclamation me-2"></i>
+                    {!! __('<b>EN</b> Translation to <b>VN</b> is not complete') !!}
+                </div>
+            </div>
+        </div>
+        @endif
         <div class="container mt-4 mb-5">
             @guest
             <form class="d-flex d-lg-none mb-3" role="search" action="/search">
@@ -265,7 +275,7 @@
             </form>
             @endguest
             <div class="dropup">
-                <button class="animated-btn bg-gradient shadow" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+                <button class="animated-btn shadow" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                         class="fa-solid fa-comment"></i></button>
                 <ul class="dropdown-menu dropdown-menu-lg-end" id="floatingBtnShow">
                     <li><a href="https://www.messenger.com/t/100049253115031" target="_blank"
@@ -276,6 +286,8 @@
                                 src="/assets/img/zalo.svg" width="56px" height="auto">Zalo</a></li>
                 </ul>
             </div>
+            <button class="top-btn shadow" onclick="topFunction()" id="topBtn" title="Go to top"><i
+                    class="fa-solid fa-chevron-up"></i></button>
             @yield('content')
         </div>
         <script script type="text/javascript">
@@ -293,7 +305,7 @@
             });
         </script>
     </main>
-    <footer class="mt-auto py-4 text-light bg-gradient">
+    <footer class="mt-auto py-4 text-light">
         <div class="container mb-3">
             @guest
             <div class="row row-cols-1 row-cols-lg-3 g-3">
