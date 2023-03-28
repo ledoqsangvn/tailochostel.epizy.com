@@ -349,15 +349,22 @@
                         <div><a href="/logout">{!! __('Log out') !!}</a></div>
                     </div>
                     @endauth
-                    <div class="col text-center text-lg-start">
-                        <h5 class="fw-bold" style="color:rgba(248, 177, 21, 1);">{!! __('Maps') !!}:</h5>
-                    </div>
                 </div>
             </div>
-            <div class="container mb-3">
-                <div class="text-center"><span><i class="fa-regular fa-copyright"></i> 2023
+            <div class="container">
+                <div class="text-center">
+                    <span>
+                        <i class="fa-regular fa-copyright"></i> 2023
                         <b>{!! __('Tai Loc Hostel') !!}</b>.
-                        {!! __('All rights reserved') !!}.</span>
+                        {!! __('All rights reserved') !!}.
+                    </span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="text-center">
+                    <a href=""><i class="fa-solid fa-sitemap me-2"></i>Sitemap</a>
+                    <span>|</span>
+                    <a href=""><i class="fa-solid fa-scale-balanced me-2"></i>License</a>
                 </div>
             </div>
     </footer>
