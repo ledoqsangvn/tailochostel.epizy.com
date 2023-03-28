@@ -249,3 +249,24 @@ html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
 header+main {
     padding-top: 60px;
 }
+
+.pagination {
+    --bs-pagination-color: rgb(33, 37, 41);
+    --bs-pagination-hover-color: rgb(33, 37, 41);
+    --bs-pagination-focus-color: rgb(33, 37, 41);
+    --bs-pagination-active-bg: #04243c;
+    --bs-pagination-active-border-color: #04243c;
+}
+
+.dropdown-menu {
+    --bs-dropdown-link-active-bg: #1e2125;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    font-weight: bold;
+}
+
+.page-item.active {
+    font-weight: bold;
+}
