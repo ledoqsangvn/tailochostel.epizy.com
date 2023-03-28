@@ -354,7 +354,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
+            <div class="container mb-3">
                 <div class="text-center"><span><i class="fa-regular fa-copyright"></i> 2023
                         <b>{!! __('Tai Loc Hostel') !!}</b>.
                         {!! __('All rights reserved') !!}.</span>

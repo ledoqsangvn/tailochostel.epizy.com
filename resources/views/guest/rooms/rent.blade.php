@@ -11,8 +11,6 @@
         <div class="mb-3">{!! __('Price') !!}: <b>
                 <?php echo number_format("$room->roomPrice", 0); ?>
             </b> VND</div>
-        <div class="h5 fw-bold">{!! __('Description') !!}:</div>
-        <div class="mb-3">{!! $room->roomDescription !!}</div>
     </div>
     <div class="col text-center text-lg-start">
         <h3 class="mb-3 text-center">Rent information form</h3>
