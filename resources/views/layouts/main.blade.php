@@ -220,7 +220,7 @@
                             </ul>
                         </li>
                         @endauth
-                        {{-- <li class="nav-item dropdown me-0 me-lg-2">
+                        <li class="nav-item dropdown me-0 me-lg-2">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 @if (app()->getLocale() == 'vi')
@@ -256,7 +256,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li> --}}
+                        </li>
                     </ul>
                 </div>
             </div>

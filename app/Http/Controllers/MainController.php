@@ -2,15 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App;
 use App\Models\Pending;
 use App\Models\Room;
-use App\Models\User;
-use Auth;
 use DB;
-use File;
 use Illuminate\Http\Request;
-use Route;
 
 class MainController extends Controller
 {
@@ -46,9 +41,7 @@ class MainController extends Controller
     }
     public function search(Request $request)
     {
-        // Get the search value from the request
         $search = $request->input('keyword');
-        // Search in the title and body columns from the posts table
         $results = Room::query()
             ->where('roomNo', 'LIKE', "%{$search}%")
             ->orWhere('roomFloor', 'LIKE', "%{$search}%")
@@ -57,8 +50,6 @@ class MainController extends Controller
             ->where('roomNo', 'LIKE', "%{$search}%")
             ->orWhere('roomFloor', 'LIKE', "%{$search}%")
             ->count();
-
-        // Return the search view with the resluts compacted
         return view('guest.rooms.search', compact('results', 'search', 'count'));
     }
     public function viewRoom($id_room)
@@ -75,12 +66,10 @@ class MainController extends Controller
     {
         $this->validate($request, [
             'rentalName' => 'required',
-            'phoneNumber' => 'required|numeric|min:10'
         ], [
                 'rentalName.required' => 'Please enter your name',
                 'phoneNumber.required' => 'Please enter phone number',
                 'phoneNumber.numberic' => 'Phone number must be number',
-                'phoneNumber.min:10' => 'Phone number must be 10 digits',
             ]);
         $pending = new Pending;
         $pending->id = $id_room;

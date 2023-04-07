@@ -64,7 +64,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script type="text/javascript">
     var ctx = document.getElementById("pieChart").getContext('2d');
-    var myChart = new Chart(ctx, {
+    var pieChart = new Chart(ctx, {
         type: 'pie',
         data: {
             labels: ['Available', 'Rented'],
@@ -85,7 +85,7 @@
 </script>
 <script type="text/javascript">
     var ctx = document.getElementById("lineChart").getContext('2d');
-    var myChart = new Chart(ctx, {
+    var lineChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
@@ -98,9 +98,7 @@
                     {{ $countRentMonth7 }}, {{ $countRentMonth8 }}, {{ $countRentMonth9 }},
                     {{ $countRentMonth10 }}, {{ $countRentMonth11 }}, {{ $countRentMonth12 }}
                 ],
-                fill: false,
-                borderColor: 'rgb(13,110,253)',
-                tension: 0.1
+                borderColor: 'rgba(0,0,255)',
             }],
         },
         options: {
