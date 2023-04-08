@@ -9,7 +9,6 @@
     <meta name="author" content="Le Do Quang Sang">
     <meta name="description" content="Tai Loc Hostel - a hostel website." />
     <meta name="keywords" content="Tai Loc Hostel, Tai Loc, Hostel" />
-    <meta name="robots" content="index,follow" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-title" content="Tai Loc Hostel">
