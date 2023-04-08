@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>{!! __('Tai Loc Hostel') !!} - @yield('title')</title>
-    <meta name="google-site-verification" content="nrtrLLsjtHZg3XZFvFwtaGa_e4KMAukWJ9N4wgaEKAc" />
     <meta name="theme-color" content="#062639">
     <meta name="author" content="Le Do Quang Sang">
     <meta name="description" content="Tai Loc Hostel - a hostel website." />
