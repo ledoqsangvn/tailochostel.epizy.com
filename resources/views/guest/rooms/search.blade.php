@@ -4,7 +4,7 @@
 @if (is_null($search))
 <div class="d-flex justify-content-center">
     <div class="d-inline-flex alert alert-danger text-center justify-content-center" role="alert">
-        <span class="h4 mb-0"><i class="fa-solid fa-triangle-exclamation"></i> Please enter keyword to search !</span>
+        <span class="h5 mb-0"><i class="fa-solid fa-triangle-exclamation"></i> Please enter keyword to search !</span>
     </div>
 </div>
 @else
@@ -49,7 +49,7 @@
     @endforeach
 </div>
 @else
-<div class="h4 text-center">No result, please try again !</div>
+<div class="h5 text-center">No result, please try again !</div>
 @endif
 @endif
 <script script type="text/javascript">
