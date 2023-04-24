@@ -193,11 +193,13 @@
                                 __('Log in') !!}</a>
                         </li>
                         @endguest
+                        @auth
                         <li class="nav-item">
                             <a class="nav-link" href="/rooms/status/pending"><i
                                     class="fa-solid fa-hourglass-start me-2"></i>Pending rooms <span
                                     class="badge bg-danger">{{$countPending}}</span></a>
                         </li>
+                        @endauth
                         @auth
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
@@ -218,7 +220,7 @@
                             </ul>
                         </li>
                         @endauth
-                        <li class="nav-item dropdown me-0 me-lg-2">
+                        {{-- <li class="nav-item dropdown me-0 me-lg-2">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 @if (app()->getLocale() == 'vi')
@@ -254,14 +256,14 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <main class="flex-shrink-0">
-        @if (app()->getLocale() == 'vi')
+        {{-- @if (app()->getLocale() == 'vi')
         <div class="d-flex justify-content-center">
             <div class="alert alert-danger mt-4">
                 <div>
@@ -270,7 +272,7 @@
                 </div>
             </div>
         </div>
-        @endif
+        @endif --}}
         <div class="container mt-4 mb-5">
             @guest
             <form class="d-flex d-lg-none mb-3" role="search" action="/search">
@@ -281,7 +283,7 @@
                 </div>
             </form>
             @endguest
-            <div class="dropup">
+            {{-- <div class="dropup">
                 <button class="animated-btn shadow" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i
                         class="fa-solid fa-comment"></i></button>
                 <ul class="dropdown-menu dropdown-menu-lg-end" id="floatingBtnShow">
@@ -292,7 +294,7 @@
                             class="dropdown-item p-2 d-flex align-items-center"><img class="me-2"
                                 src="/assets/img/zalo.svg" width="56px" height="auto">Zalo</a></li>
                 </ul>
-            </div>
+            </div> --}}
             <button class="top-btn shadow" onclick="topFunction()" id="topBtn"><i
                     class="fa-solid fa-chevron-up"></i></button>
             @yield('content')
@@ -358,13 +360,13 @@
                     </span>
                 </div>
             </div>
-            <div class="container">
+            {{-- <div class="container">
                 <div class="text-center">
                     <a href=""><i class="fa-solid fa-sitemap me-2"></i>Sitemap</a>
                     <span>|</span>
                     <a href=""><i class="fa-solid fa-scale-balanced me-2"></i>License</a>
                 </div>
-            </div>
+            </div> --}}
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha256-lSABj6XYH05NydBq+1dvkMu6uiCc/MbLYOFGRkf3iQs=" crossorigin="anonymous"></script>

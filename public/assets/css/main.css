@@ -206,7 +206,7 @@ html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
 .top-btn {
     display: none;
     position: fixed;
-    bottom: 120px;
+    bottom: 40px;
     right: 20px;
     z-index: 999;
     width: 60px;

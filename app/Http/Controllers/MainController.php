@@ -92,12 +92,12 @@ class MainController extends Controller
             ->get();
         return view('guest.rooms.pending', compact('pendings'));
     }
-    public function changeLanguage($language)
-    {
-        \Session::put('locale', $language);
+    // public function changeLanguage($language)
+    // {
+    //     \Session::put('locale', $language);
 
-        return redirect()->back();
-    }
+    //     return redirect()->back();
+    // }
     public function confirmPending($id_pending)
     {
         $pending = Pending::findOrFail($id_pending);
